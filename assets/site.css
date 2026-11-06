@@ -44,17 +44,37 @@ button { font: inherit; color: inherit; }
 }
 
 /* ---- Page 1: poster ---- */
-.hero { position: relative; height: 100vh; height: 100svh; min-height: 480px; background: var(--sky); overflow: hidden; }
+.hero { position: relative; z-index: 1; height: 100vh; height: 100svh; min-height: 480px; overflow: hidden; }
+main { overflow-x: clip; }
 .hero-art {
   position: absolute; inset: 0;
   background: var(--sky) 0% 85% / cover no-repeat;
   background-image: image-set(url(img/poster-zh-1280.webp) 1x, url(img/poster-zh-1920.webp) 2x);
+  /* let the bottom edge dissolve instead of ending in a hard line */
+  -webkit-mask-image: linear-gradient(#000 0, #000 92%, rgba(0, 0, 0, .55) 97%, transparent 100%);
+          mask-image: linear-gradient(#000 0, #000 92%, rgba(0, 0, 0, .55) 97%, transparent 100%);
 }
 html:not([data-lang="zh"]) .hero-art { background-image: image-set(url(img/poster-en-1280.webp) 1x, url(img/poster-en-1920.webp) 2x); }
 @media (min-width: 1400px) {
   .hero-art { background-image: url(img/poster-zh-1920.webp); }
   html:not([data-lang="zh"]) .hero-art { background-image: url(img/poster-en-1920.webp); }
 }
+
+/* The poster's colours keep seeping down: its bottom strip, mirrored and
+   blurred, fading into the paper under the first screen. */
+.bleed { position: relative; height: 0; }
+.bleed::before {
+  content: ""; position: absolute; left: -80px; right: -80px; top: -10vh; height: 62vh;
+  background: var(--sky) center bottom / 100% 300% no-repeat;
+  background-image: url(img/poster-zh-800.webp);
+  transform: scaleY(-1);
+  filter: blur(42px) saturate(1.05);
+  opacity: .85;
+  -webkit-mask-image: linear-gradient(to top, #000 0, #000 16%, rgba(0, 0, 0, .45) 48%, transparent 100%);
+          mask-image: linear-gradient(to top, #000 0, #000 16%, rgba(0, 0, 0, .45) 48%, transparent 100%);
+  pointer-events: none;
+}
+html:not([data-lang="zh"]) .bleed::before { background-image: url(img/poster-en-800.webp); }
 .hero-titles { display: none; }
 .down {
   position: absolute; left: 50%; bottom: max(22px, env(safe-area-inset-bottom)); margin-left: -24px;
@@ -72,22 +92,31 @@ html:not([data-lang="zh"]) .hero-art { background-image: image-set(url(img/poste
     background-image: image-set(url(img/poster-portrait-520.webp) 1x, url(img/poster-portrait-780.webp) 2x);
     background-position: 72% top;
   }
+  .hero { background: linear-gradient(var(--sky) 0, var(--sky) 74%, #a9c6f6 90%, #dce7f8 100%); }
+  .hero-art, html:not([data-lang="zh"]) .hero-art { -webkit-mask-image: none; mask-image: none; }
   .hero-art::after { content: ""; position: absolute; inset: auto 0 -1px 0; height: 35%; background: linear-gradient(transparent, var(--sky)); }
+  .bleed::before, html:not([data-lang="zh"]) .bleed::before {
+    left: 0; right: 0; top: 0; height: 40vh; background: linear-gradient(#dce7f8, var(--paper));
+    transform: none; filter: none; opacity: 1; -webkit-mask-image: none; mask-image: none;
+  }
+  .down { color: var(--ink); filter: none; }
   .hero-titles { display: block; position: absolute; left: 0; right: 0; top: 58%; padding: 0 24px; }
   .hero-titles img { width: min(100%, 520px); margin: 0 auto; display: none; }
   .hero-titles .sub { width: min(86%, 440px); margin-top: -5%; }
   html[data-lang="zh"] .hero-titles .t-zh,
   html:not([data-lang="zh"]) .hero-titles .t-en { display: block; }
   .langs button { font-size: 16px; padding: 6px 8px 8px; }
-  .bar { top: auto; bottom: calc(max(22px, env(safe-area-inset-bottom)) + 52px); left: 0; right: 0; display: flex; justify-content: center; }
+  .bar { top: 77%; left: 0; right: 0; display: flex; justify-content: center; }
 }
 
 /* ---- Page 2: paper ---- */
 .play {
+  position: relative; z-index: 1;
   min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column;
-  padding: 0 20px; text-align: center;
+  padding: 0 24px; text-align: center;
+  word-break: keep-all; overflow-wrap: anywhere; /* break CJK at punctuation, not mid-phrase */
 }
-.play .inner { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 72px 0 24px; }
+.play .inner { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: clamp(96px, 16vh, 180px) 0 24px; }
 
 /* the mascot's own line art, drawn in ink */
 .mark {
@@ -95,9 +124,10 @@ html:not([data-lang="zh"]) .hero-art { background-image: image-set(url(img/poste
   -webkit-mask: url(img/mascot.webp) center / contain no-repeat;
           mask: url(img/mascot.webp) center / contain no-repeat;
 }
-.play h2 { margin: 18px 0 0; font-size: clamp(34px, 5vw, 52px); font-weight: 400; letter-spacing: .06em; line-height: 1.25; }
-.play .sub { margin: 4px 0 0; font-size: clamp(17px, 1.8vw, 21px); color: var(--ink-soft); }
-.lead { margin: 22px 0 0; color: var(--ink); font-size: clamp(16px, 1.4vw, 18px); max-width: 30em; text-wrap: balance; }
+.mark { margin-top: clamp(56px, 9vh, 96px); }
+.lead { margin: 0; color: var(--ink); font-size: clamp(17px, 1.5vw, 20px); line-height: 2; max-width: 30em; text-wrap: balance; }
+.motto { margin: clamp(40px, 7vh, 72px) 0; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.5; letter-spacing: .06em; text-wrap: balance; }
+.poem p { margin: 0; color: var(--ink-soft); font-size: clamp(16px, 1.4vw, 19px); line-height: 2.3; text-wrap: balance; }
 
 /* a slightly wobbly, hand-drawn frame */
 .itch { width: 100%; max-width: 552px; margin: 40px 0 34px; }

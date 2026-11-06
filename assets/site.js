@@ -5,7 +5,12 @@
     zh: {
       htmlLang: "zh-CN", docTitle: "愿此身如风 · Light as Wind", name: "中文",
       skip: "跳到正文", title: "愿此身如风", subtitle: "～去往天空深蓝的彼方",
-      lead: "手工打造的像素风海洋横版游戏，一切由程序生成。",
+      aboutH: "游戏简介",
+      lead: "在这款像素风横版冒险游戏中，你将踏上一段梦幻而有趣的旅程，穿过海洋，追寻远方的天空。",
+      motto: "愿此身如风，去往天空深蓝的彼方。",
+      poem1: "听说，海的尽头，是一片深蓝色的天空。",
+      poem2: "梦总有醒来的时候。但现在，旅途还没有结束。",
+      poem3: "所以啊，在醒来之前，再往前走一点吧。",
       soon: "敬请期待", itchSoon: "即将登陆 itch.io", next: "下一页",
       qq: "QQ 群", mail: "邮箱", copied: "QQ 群号已复制",
       posterAlt: "海报：蓝天下白发少女的侧脸，白鸽飞过"
@@ -13,7 +18,12 @@
     en: {
       htmlLang: "en", docTitle: "Light as Wind · 愿此身如风", name: "English",
       skip: "Skip to content", title: "Light as Wind", subtitle: "~ To the Far Side of Deep Blue Sky",
-      lead: "A hand-made pixel-art ocean side-scroller, generated entirely by code.",
+      aboutH: "About the game",
+      lead: "In this pixel-art side-scrolling adventure, you set out on a dreamy, playful journey across the ocean, chasing a faraway sky.",
+      motto: "Light as wind, to the far side of deep blue sky.",
+      poem1: "They say that where the sea ends, there is a sky of deep blue.",
+      poem2: "Every dream ends in waking. But not yet: the journey isn't over.",
+      poem3: "So, before you wake, go a little further.",
       soon: "Coming soon", itchSoon: "Coming to itch.io", next: "Next page",
       qq: "QQ group", mail: "Email", copied: "QQ group number copied",
       posterAlt: "Poster: a white-haired girl in profile against a blue sky, white doves flying past"
@@ -21,7 +31,12 @@
     ja: {
       htmlLang: "ja", docTitle: "この身、風のごとく · Light as Wind", name: "日本語",
       skip: "本文へスキップ", title: "この身、風のごとく", subtitle: "〜深く青い空の彼方へ",
-      lead: "手づくりのピクセルアート海洋横スクロール。すべてプログラムで生成。",
+      aboutH: "ゲーム紹介",
+      lead: "このピクセルアートの横スクロールアドベンチャーで、あなたは海を越え、遠い空を追いかける、夢のように不思議で楽しい旅に出ます。",
+      motto: "この身、風のごとく。深く青い空の彼方へ。",
+      poem1: "海の果てには、深い青色の空があるらしい。",
+      poem2: "夢はいつか覚めるもの。でも今は、旅はまだ終わっていない。",
+      poem3: "だから、目が覚める前に、もう少しだけ先へ進もう。",
       soon: "近日公開", itchSoon: "itch.io にて近日公開", next: "次のページ",
       qq: "QQ グループ", mail: "メール", copied: "QQ グループ番号をコピーしました",
       posterAlt: "ポスター：青空を背に白い髪の少女の横顔、白い鳩が飛んでいく"
@@ -29,7 +44,12 @@
     ko: {
       htmlLang: "ko", docTitle: "이 몸 바람처럼 · Light as Wind", name: "한국어",
       skip: "본문으로 건너뛰기", title: "이 몸 바람처럼", subtitle: "~ 깊고 푸른 하늘 저편으로",
-      lead: "손으로 빚은 픽셀 아트 바다 횡스크롤 게임. 모든 것이 프로그램으로 생성됩니다.",
+      aboutH: "게임 소개",
+      lead: "이 픽셀 아트 횡스크롤 어드벤처에서, 당신은 바다를 건너 먼 하늘을 좇는 꿈같고 즐거운 여정을 떠납니다.",
+      motto: "이 몸 바람처럼, 깊고 푸른 하늘 저편으로.",
+      poem1: "바다의 끝에는 깊고 푸른 하늘이 있다고 해요.",
+      poem2: "꿈은 언젠가 깨기 마련이죠. 하지만 지금은, 여행이 아직 끝나지 않았어요.",
+      poem3: "그러니까, 깨어나기 전에 조금만 더 앞으로 가 봐요.",
       soon: "곧 공개", itchSoon: "곧 itch.io에서 만나요", next: "다음 페이지",
       qq: "QQ 그룹", mail: "이메일", copied: "QQ 그룹 번호를 복사했습니다",
       posterAlt: "포스터: 푸른 하늘을 배경으로 한 흰 머리 소녀의 옆얼굴, 흰 비둘기가 날아간다"
