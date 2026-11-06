@@ -13,6 +13,9 @@
       poem3: "所以啊，在醒来之前，\n再往前走一点吧。",
       soon: "敬请期待", itchSoon: "即将登陆 itch.io", next: "下一页",
       qq: "QQ 群", mail: "邮箱", copied: "QQ 群号已复制",
+      clipAlt: "一群水母从海底缓缓上升", pause: "暂停", play: "播放",
+      altA: "幽暗的海底剧场里，一束光照着弹竖琴的玩偶海星，水母在四周漂浮",
+      altB: "浅海的巨大珊瑚旁，一只红色螃蟹在沙地上爬行",
       storyAlt: "水母群从海底向上漂去，玩偶海星站在海草之间",
       posterAlt: "海报：蓝天下白发少女的侧脸，白鸽飞过"
     },
@@ -27,6 +30,9 @@
       poem3: "So, before you wake, go a little further.",
       soon: "Coming soon", itchSoon: "Coming to itch.io", next: "Next page",
       qq: "QQ group", mail: "Email", copied: "QQ group number copied",
+      clipAlt: "A swarm of jellyfish slowly rising from the seabed", pause: "Pause", play: "Play",
+      altA: "In a dark undersea theatre, a beam of light falls on a plush starfish playing a harp while jellyfish drift around",
+      altB: "A red crab crawling across the sand beside giant shallow-water corals",
       storyAlt: "Jellyfish drifting up from the seabed past a plush starfish standing in the seagrass",
       posterAlt: "Poster: a white-haired girl in profile against a blue sky, white doves flying past"
     },
@@ -41,6 +47,9 @@
       poem3: "だから、目が覚める前に、\nもう少しだけ先へ進もう。",
       soon: "近日公開", itchSoon: "itch.io にて近日公開", next: "次のページ",
       qq: "QQ グループ", mail: "メール", copied: "QQ グループ番号をコピーしました",
+      clipAlt: "海底からゆっくり昇っていくクラゲの群れ", pause: "一時停止", play: "再生",
+      altA: "暗い海底の劇場で、ハープを弾くぬいぐるみのヒトデに光が差し、まわりをクラゲが漂う",
+      altB: "浅瀬の巨大なサンゴのそばを、赤いカニが砂の上を歩いていく",
       storyAlt: "海草の間に立つぬいぐるみのヒトデの上を、クラゲの群れが昇っていく",
       posterAlt: "ポスター：青空を背に白い髪の少女の横顔、白い鳩が飛んでいく"
     },
@@ -55,6 +64,9 @@
       poem3: "그러니까, 깨어나기 전에 조금만 더 앞으로 가 봐요.",
       soon: "곧 공개", itchSoon: "곧 itch.io에서 만나요", next: "다음 페이지",
       qq: "QQ 그룹", mail: "이메일", copied: "QQ 그룹 번호를 복사했습니다",
+      clipAlt: "해저에서 천천히 떠오르는 해파리 떼", pause: "일시정지", play: "재생",
+      altA: "어두운 해저 극장에서 하프를 켜는 인형 불가사리에게 빛이 내리고, 주위로 해파리가 떠다닌다",
+      altB: "얕은 바다의 거대한 산호 옆 모래 위를 빨간 게가 기어간다",
       storyAlt: "해초 사이에 선 인형 불가사리 위로 해파리 떼가 떠오른다",
       posterAlt: "포스터: 푸른 하늘을 배경으로 한 흰 머리 소녀의 옆얼굴, 흰 비둘기가 날아간다"
     }
@@ -98,5 +110,27 @@
     });
   });
 
+  // Story clip: plays only while on screen, never with reduced motion.
+  var video = document.getElementById("story-video");
+  var toggle = document.querySelector(".playpause");
+  var userPaused = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function syncPlay() {
+    if (!toggle) return;
+    toggle.setAttribute("aria-pressed", String(userPaused));
+    toggle.setAttribute("aria-label", T[current][userPaused ? "play" : "pause"]);
+  }
+  if (video && toggle) {
+    var visible = false;
+    var run = function () {
+      if (visible && !userPaused) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+      else video.pause();
+    };
+    toggle.addEventListener("click", function () { userPaused = !userPaused; syncPlay(); run(); });
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (e) { visible = e[0].isIntersecting; run(); }, { threshold: 0.3 }).observe(video);
+    }
+  }
+
   apply(current);
+  syncPlay();
 })();

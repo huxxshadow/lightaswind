@@ -98,13 +98,29 @@ src_icon.resize((256, 256), Image.LANCZOS).save(ICO / "mascot-256.png")
 
 print("done")
 
-# ---- Story image (placeholder gameplay still; replace assets/img/story-*.webp any time) ----
+# ---- Story media (placeholders from game recordings; replace any time) ----
+# Video on top, two stills under it. Game pixels are ~4px at 1792 wide, so
+# halving with nearest-neighbour keeps them crisp.
 REC = SRC / "Main" / "Recordings"
-STORY_CLIP, STORY_T = "promo/jelly-swarm/jelly_swarm_rise.mp4", 6.25
+MEDIA = ROOT / "assets" / "media"
+MEDIA.mkdir(parents=True, exist_ok=True)
 tmp = ROOT / "tools" / "_frame.png"
-ff("-ss", str(STORY_T), "-i", str(REC / STORY_CLIP), "-frames:v", "1", str(tmp))
-im = Image.open(tmp).convert("RGB")  # 1792x1008, game pixels are ~4px
-save_webp(im, IMG / "story-1792.webp", q=82)
-save_webp(im.resize((896, 504), Image.NEAREST), IMG / "story-896.webp", q=84)
+STILLS = [
+    ("story-a", "promo/harp-show/harp_show_v8_get_on.mp4", 32.0),
+    ("story-b", "clips/corals/giant_corals_shallow.mp4", 22.0),
+]
+for name, rel, t in STILLS:
+    ff("-ss", str(t), "-i", str(REC / rel), "-frames:v", "1", str(tmp))
+    im = Image.open(tmp).convert("RGB")
+    save_webp(im, IMG / f"{name}-1792.webp", q=82)
+    save_webp(im.resize((896, 504), Image.NEAREST), IMG / f"{name}-896.webp", q=84)
+    tmp.unlink()
+
+clip = str(REC / "promo/jelly-swarm/jelly_swarm_rise.mp4")
+ff("-ss", "0", "-t", "10", "-i", clip, "-an", "-vf", "scale=896:504:flags=neighbor,fps=30",
+   "-c:v", "libx264", "-crf", "26", "-preset", "slow", "-pix_fmt", "yuv420p", "-movflags", "+faststart",
+   str(MEDIA / "story.mp4"))
+ff("-ss", "0", "-i", clip, "-frames:v", "1", "-vf", "scale=896:504:flags=neighbor", str(tmp))
+save_webp(Image.open(tmp).convert("RGB"), MEDIA / "story-poster.webp", q=84)
 tmp.unlink()
-print("story image done")
+print("story media done")

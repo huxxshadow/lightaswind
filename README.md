@@ -65,3 +65,5 @@ This needs Pillow.
 ## Placeholders
 
 Release date, platforms and store links are not announced yet. Page 2 has a "Coming to itch.io" slot. Search `ITCH EMBED` in `index.html` and paste the itch.io widget iframe (itch.io → Edit game → Distribute → Embed game) in place of the placeholder.
+
+The story section's video and two screenshots are placeholders cut from the game's recordings. Replace `assets/media/story.mp4` (+ `story-poster.webp`, its first frame) and `assets/img/story-a-896.webp` / `story-a-1792.webp`, `story-b-896.webp` / `story-b-1792.webp` with the real ones (16:9; short muted loop for the video, H.264 MP4 with `+faststart`). Search `STORY MEDIA` in `index.html`.

@@ -81,10 +81,22 @@
   <section id="play" class="play" aria-labelledby="play-h">
     <div class="inner">
       <div class="story">
-        <!-- STORY IMAGE: placeholder gameplay still; swap assets/img/story-896.webp / story-1792.webp -->
-        <figure class="story-art">
-          <img class="pixel" src="/assets/img/story-896.webp" srcset="/assets/img/story-896.webp 896w, /assets/img/story-1792.webp 1792w" sizes="(min-width: 900px) 50vw, 92vw" width="896" height="504" loading="lazy" decoding="async" data-i18n-alt="storyAlt" alt="水母群从海底向上漂去，玩偶海星站在海草之间">
-        </figure>
+        <!-- STORY MEDIA (placeholders): swap assets/media/story.mp4 (+ story-poster.webp)
+             and assets/img/story-a-*.webp, story-b-*.webp with real footage / screenshots -->
+        <div class="story-art">
+          <figure class="clip">
+            <video id="story-video" class="pixel" muted loop playsinline preload="metadata"
+                   poster="/assets/media/story-poster.webp" width="896" height="504"
+                   data-i18n-aria="clipAlt" aria-label="一群水母从海底缓缓上升">
+              <source src="/assets/media/story.mp4" type="video/mp4">
+            </video>
+            <button type="button" class="playpause" aria-pressed="false" data-i18n-aria="pause" aria-label="暂停">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M8 5.5v13M16 5.5v13"/><path class="i-play" d="M8 5.5l11 6.5-11 6.5z"/></svg>
+            </button>
+          </figure>
+          <a class="shot" href="/assets/img/story-a-1792.webp"><img class="pixel" src="/assets/img/story-a-896.webp" srcset="/assets/img/story-a-896.webp 896w, /assets/img/story-a-1792.webp 1792w" sizes="(min-width: 900px) 25vw, 46vw" width="896" height="504" loading="lazy" decoding="async" data-i18n-alt="altA" alt="幽暗的海底剧场里，一束光照着弹竖琴的玩偶海星，水母在四周漂浮"></a>
+          <a class="shot" href="/assets/img/story-b-1792.webp"><img class="pixel" src="/assets/img/story-b-896.webp" srcset="/assets/img/story-b-896.webp 896w, /assets/img/story-b-1792.webp 1792w" sizes="(min-width: 900px) 25vw, 46vw" width="896" height="504" loading="lazy" decoding="async" data-i18n-alt="altB" alt="浅海的巨大珊瑚旁，一只红色螃蟹在沙地上爬行"></a>
+        </div>
         <div class="story-text">
           <h2 id="play-h" class="sr" data-i18n="aboutH">游戏简介</h2>
           <p class="lead" data-i18n="lead">在这款像素风横版冒险游戏中，你将踏上一段梦幻而有趣的旅程，
