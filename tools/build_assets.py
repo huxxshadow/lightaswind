@@ -51,8 +51,8 @@ BW, BH = 96, 160
 bleed = Image.new("RGB", (BW, BH))
 px = bleed.load()
 for y in range(BH):
-    t = y / (BH - 1)
-    k = 1 - (1 - t) ** 2.2  # fast at first, then a long soft tail
+    t = min(1.0, max(0.0, (y / (BH - 1) - 0.18) / 0.82))  # hold the edge colour for the first 18%
+    k = 1 - (1 - t) ** 1.8  # then a long, soft fade
     k = k * k * (3 - 2 * k)
     for x in range(BW):
         c = edge.getpixel((x, 0))
