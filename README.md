@@ -6,8 +6,8 @@ Official website for **Light as Wind (愿此身如风)**. A single static page: 
 index.html          the page (zh / en / ja / ko, auto-detected, switchable)
 404.html            not-found page (GitHub Pages serves it automatically)
 assets/site.css     styles
-assets/site.js      language switch, copy QQ group, play/pause for the clip
-assets/img|media|icons   generated images, the loop clip and icons
+assets/site.js      language menu, copy QQ group
+assets/img|icons   generated images and icons
 og-en.jpg, og-zh.jpg     social share cards
 CNAME               custom domain for GitHub Pages
 tools/build_assets.py    regenerates everything in assets/ from the source art
@@ -23,13 +23,13 @@ Then open http://localhost:8080/.
 
 ## Regenerating assets
 
-The source art lives outside this repo (`../海报`, `../啾咪游戏图标-放大透明版`, `../Main/Recordings`) and is only read, never changed.
+The source art lives outside this repo (`../海报`, `../啾咪游戏图标-放大透明版`) and is only read, never changed.
 
 ```bash
 python tools/build_assets.py
 ```
 
-This needs Pillow and ffmpeg.
+This needs Pillow.
 
 ## Deploy: GitHub Pages + Cloudflare
 
@@ -63,4 +63,4 @@ This needs Pillow and ffmpeg.
 
 ## Placeholders
 
-Release date, platforms and store links are not announced yet. The page shows a "Coming soon / To be announced" pill. Search `PLACEHOLDER` in `index.html` to replace it with store buttons later.
+Release date, platforms and store links are not announced yet. Page 2 has a "Coming to itch.io" slot. Search `ITCH EMBED` in `index.html` and paste the itch.io widget iframe (itch.io → Edit game → Distribute → Embed game) in place of the placeholder.
