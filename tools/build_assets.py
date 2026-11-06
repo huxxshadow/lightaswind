@@ -97,3 +97,14 @@ tile(180, radius_frac=0, pad_frac=0.1).save(ICO / "apple-touch-icon.png")
 src_icon.resize((256, 256), Image.LANCZOS).save(ICO / "mascot-256.png")
 
 print("done")
+
+# ---- Story image (placeholder gameplay still; replace assets/img/story-*.webp any time) ----
+REC = SRC / "Main" / "Recordings"
+STORY_CLIP, STORY_T = "promo/jelly-swarm/jelly_swarm_rise.mp4", 6.25
+tmp = ROOT / "tools" / "_frame.png"
+ff("-ss", str(STORY_T), "-i", str(REC / STORY_CLIP), "-frames:v", "1", str(tmp))
+im = Image.open(tmp).convert("RGB")  # 1792x1008, game pixels are ~4px
+save_webp(im, IMG / "story-1792.webp", q=82)
+save_webp(im.resize((896, 504), Image.NEAREST), IMG / "story-896.webp", q=84)
+tmp.unlink()
+print("story image done")

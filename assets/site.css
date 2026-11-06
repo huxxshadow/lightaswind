@@ -123,7 +123,7 @@ html:not([data-lang="zh"]) .hero-art { background-image: image-set(url(img/poste
   font-size: clamp(17px, 1.45vw, 20px); line-height: 2.1; letter-spacing: .04em; text-wrap: balance;
   white-space: pre-line;
 }
-html[data-lang="zh"] .lead { max-width: 32em; } /* two lines: the journey, then the sea and the sky */
+html[data-lang="zh"] .lead { max-width: 31em; font-size: clamp(16px, 1.25vw, 19px); } /* two lines: the journey, then the sea and the sky */
 .motto {
   margin: clamp(48px, 8vh, 84px) 0 0; max-width: 12em;
   font-size: clamp(30px, 3.6vw, 46px); line-height: 1.55; letter-spacing: .08em; text-wrap: balance;
@@ -180,3 +180,25 @@ html[data-lang="en"] .motto { letter-spacing: .02em; max-width: 16em; }
 /* Latin and Hangul run longer per line than CJK */
 html[data-lang="en"] .lead, html[data-lang="ko"] .lead { max-width: 29em; }
 html[data-lang="en"] .poem, html[data-lang="ko"] .poem { max-width: 32em; }
+
+/* ---- Story: picture on the left, words on the right ---- */
+.story { width: 100%; max-width: 1240px; display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(40px, 6vh, 64px); align-items: center; }
+.story-art { position: relative; margin: 0 auto; width: 100%; max-width: 640px; }
+.story-art img { position: relative; z-index: 1; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px 10px 7px 12px; }
+.story-art::before { /* a loose pencil frame, slightly offset behind the picture */
+  content: ""; position: absolute; inset: 12px -12px -12px 12px; z-index: 0;
+  border: 1.6px solid var(--line); border-radius: 12px 220px 10px 200px / 200px 12px 220px 10px;
+}
+.pixel { image-rendering: pixelated; }
+.story-text { display: flex; flex-direction: column; align-items: center; }
+
+@media (min-width: 900px) {
+  .story { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(56px, 6vw, 112px); }
+  .story-text { align-items: flex-start; text-align: left; }
+  .story-text .wave { margin-left: 0; }
+  .story-text .motto { margin-top: clamp(36px, 5vh, 56px); }
+  .story-text .wave { margin-bottom: clamp(36px, 5vh, 56px); }
+  html[data-lang="en"] .poem p, html[data-lang="ko"] .poem p { text-align: left; }
+  html[data-lang="en"] .poem, html[data-lang="ko"] .poem { text-align: left; }
+}
+@media (min-width: 900px) { html[data-lang="zh"] .story-text .poem, html[data-lang="ja"] .story-text .poem { width: fit-content; } }
