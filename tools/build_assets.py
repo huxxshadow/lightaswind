@@ -128,25 +128,4 @@ save_webp(Image.open(tmp).convert("RGB"), MEDIA / "story-poster.webp", q=84)
 tmp.unlink()
 print("story media done")
 
-# ---- Team page: one portrait per cast creature (placeholders cut from recordings) ----
-# box is in a 640-wide frame; scaled to the clip's real size.
-CAST = [
-    ("starfish",  "clips/starfish/starfish_reel/2_walk.mp4", 0.40, (190, 100, 370, 280)),
-    ("slug",      "promo/sea-slug/seaslug_cartoon_crawl_v4.mp4", 0.50, (110, 165, 290, 345)),
-    ("scallop",   "clips/shellfish/shellfish_reel/03_idle.mp4", 0.50, (200, 100, 420, 320)),
-    ("swordfish", None, 0, (350, 160, 550, 360)),  # from a still, see below
-    ("octopus",   "clips/octopus/octopus_reel/3_hug.mp4", 0.50, (20, 40, 340, 360)),
-]
-for name, rel, frac, box in CAST:
-    if rel is None:
-        im = Image.open(REC / "promo/swordfish-dash/dash_ahead_burst_f96.png").convert("RGB")
-    else:
-        dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0",
-                                    str(REC / rel)], capture_output=True, text=True, check=True).stdout)
-        ff("-ss", str(dur * frac), "-i", str(REC / rel), "-frames:v", "1", str(tmp))
-        im = Image.open(tmp).convert("RGB")
-        tmp.unlink()
-    f = im.width / 640
-    sq = im.crop(tuple(round(v * f) for v in box)).resize((400, 400), Image.LANCZOS)
-    save_webp(sq, IMG / f"cast-{name}.webp", q=84)
-print("cast portraits done")
+# ---- Team page portraits: see tools/cast_portraits.py (the game's own credit posters) ----
