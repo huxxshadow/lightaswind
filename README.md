@@ -10,7 +10,8 @@ assets/site.js      language menu, copy QQ group
 assets/img|icons   generated images and icons
 og-en.jpg, og-zh.jpg     social share cards
 CNAME               custom domain for GitHub Pages
-tools/build_assets.py    regenerates everything in assets/ from the source art
+tools/build_assets.py    regenerates assets/img and icons from the source art
+tools/subset_font.py     rebuilds assets/fonts/xiaolai-subset.woff2 (Xiaolai, SIL OFL) after text changes
 ```
 
 ## Preview locally
