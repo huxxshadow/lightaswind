@@ -121,7 +121,9 @@ html:not([data-lang="zh"]) .hero-art { background-image: image-set(url(img/poste
 .lead {
   margin: 0; max-width: 21em; color: var(--ink-soft);
   font-size: clamp(17px, 1.45vw, 20px); line-height: 2.1; letter-spacing: .04em; text-wrap: balance;
+  white-space: pre-line;
 }
+html[data-lang="zh"] .lead { max-width: 32em; } /* two lines: the journey, then the sea and the sky */
 .motto {
   margin: clamp(48px, 8vh, 84px) 0 0; max-width: 12em;
   font-size: clamp(30px, 3.6vw, 46px); line-height: 1.55; letter-spacing: .08em; text-wrap: balance;
