@@ -95,13 +95,37 @@
     each("[data-i18n-alt]", function (el) { el.alt = t[el.getAttribute("data-i18n-alt")]; });
     each("[data-i18n-aria]", function (el) { el.setAttribute("aria-label", t[el.getAttribute("data-i18n-aria")]); });
     each("[data-set-lang]", function (el) { el.setAttribute("aria-pressed", String(el.getAttribute("data-set-lang") === lang)); });
+    var cur = document.querySelector(".lang-cur");
+    if (cur) cur.textContent = t.name;
   }
 
+  // Language dropdown
+  var langBtn = document.querySelector(".lang-btn");
+  var langMenu = document.getElementById("lang-menu");
+  function setOpen(open, focusItem) {
+    langMenu.hidden = !open;
+    langBtn.setAttribute("aria-expanded", String(open));
+    if (open && focusItem) (langMenu.querySelector('[aria-pressed="true"]') || langMenu.querySelector("button")).focus();
+  }
+  langBtn.addEventListener("click", function (e) { setOpen(langMenu.hidden, e.detail === 0); });
+  document.addEventListener("click", function (e) { if (!langMenu.hidden && !e.target.closest(".lang")) setOpen(false); });
+  document.addEventListener("keydown", function (e) {
+    if (langMenu.hidden) return;
+    if (e.key === "Escape") { setOpen(false); langBtn.focus(); return; }
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      var items = Array.prototype.slice.call(langMenu.querySelectorAll("button"));
+      var k = items.indexOf(document.activeElement);
+      k = e.key === "ArrowDown" ? (k + 1) % items.length : (k - 1 + items.length) % items.length;
+      items[k].focus(); e.preventDefault();
+    }
+  });
   each("[data-set-lang]", function (b) {
     b.addEventListener("click", function () {
       var l = b.getAttribute("data-set-lang");
       try { localStorage.setItem("law-lang", l); } catch (e) {}
       apply(l);
+      setOpen(false);
+      langBtn.focus();
     });
   });
 
