@@ -205,10 +205,10 @@ html[data-lang="zh"] .lead { max-width: 31em; font-size: clamp(16px, 1.25vw, 19p
 .itch-btn:hover { transform: rotate(-1.5deg) translateY(-1px); background: rgba(67, 129, 239, .13); box-shadow: 4px 6px 0 -1px rgba(38, 53, 77, .2); }
 .itch-btn:hover .arrow { transform: translateX(4px); }
 .itch-btn .soon-tag { display: none; font-size: 14px; color: var(--ink-soft); padding-left: 10px; border-left: 1.4px solid var(--line); }
-/* no itch.io page yet: say so, and point down to the slot instead */
+/* no itch.io page yet: say so, and don't pretend to go anywhere */
+.itch-btn[href="#itch"] { cursor: default; }
 .itch-btn[href="#itch"] .soon-tag { display: inline; }
-.itch-btn[href="#itch"] .arrow { transform: rotate(90deg); }
-.itch-btn[href="#itch"]:hover .arrow { transform: rotate(90deg) translateX(3px); }
+.itch-btn[href="#itch"] .arrow { display: none; }
 .wave { display: block; width: 92px; height: 12px; margin: clamp(28px, 4vh, 40px) auto clamp(48px, 8vh, 80px); fill: none; stroke: var(--line); stroke-width: 1.6; stroke-linecap: round; }
 
 /* Chinese & Japanese: the three lines read top-to-bottom, right-to-left,
@@ -227,26 +227,13 @@ html[data-lang="en"] .poem, html[data-lang="ko"] .poem {
 html[data-lang="en"] .poem p, html[data-lang="ko"] .poem p { max-inline-size: none; padding: 0; text-align: center; text-wrap: balance; }
 html[data-lang="en"] .motto { letter-spacing: .02em; max-width: 16em; }
 
-/* a slightly wobbly, hand-drawn frame */
-.itch { width: 100%; max-width: 552px; margin: clamp(72px, 12vh, 128px) 0 24px; }
-.itch iframe, .itch-slot {
-  display: block; width: 100%; height: 167px; border: 1.6px solid var(--line);
-  border-radius: 14px 220px 12px 200px / 200px 14px 220px 12px;
-}
-.itch iframe { border-radius: 12px; }
-.itch-slot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: var(--ink-soft); font-size: 16px; }
-.badge { color: var(--ink); font-size: 22px; letter-spacing: .08em; }
 
 .foot { text-align: center; padding: 12px 0 max(24px, env(safe-area-inset-bottom)); font-size: 14px; color: var(--ink-soft); }
 
-@media (max-width: 420px) {
-  .itch-slot { border-radius: 10px 140px 8px 120px / 120px 10px 140px 8px; }
-}
 
 /* ---- Page 3: the team, as taped-on cast cards ---- */
 .team { position: relative; z-index: 1; padding: clamp(96px, 14vh, 160px) 24px clamp(64px, 10vh, 112px); text-align: center; }
 .team h2 { margin: 0; font-weight: 400; font-size: clamp(30px, 3.6vw, 44px); letter-spacing: .1em; }
-.team-sub { margin: 8px 0 0; color: var(--ink-soft); }
 .cards { list-style: none; margin: clamp(48px, 7vh, 72px) auto 0; padding: 0; max-width: 1200px;
   display: flex; flex-wrap: wrap; justify-content: center; gap: 40px 30px; }
 .card {

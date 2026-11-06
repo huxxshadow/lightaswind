@@ -3,7 +3,7 @@
 
   var T = {
     zh: {
-      teamH: "制作成员", teamSub: "每个人在游戏里，都演了一只海洋生物。", as_starfish: "饰 · 海星", as_slug: "饰 · 海蛞蝓", as_scallop: "饰 · 大扇贝", as_swordfish: "饰 · 剑鱼", as_octopus: "饰 · 章鱼", roles_jeff: "导演 · 设计 · 开发 · 技术美术", roles_sheldon: "设计 · 原画", roles_haocheng: "设计 · 工程师", roles_pb: "设计 · 环境美术", roles_uesugi: "设计 · 环境美术", thanksT: "特别鸣谢", thanksW: "好友 EHSV", thanksY: "感谢允许我们使用他的部分歌曲作为游戏配乐", 
+      teamH: "制作成员", as_starfish: "饰 · 海星", as_slug: "饰 · 海蛞蝓", as_scallop: "饰 · 大扇贝", as_swordfish: "饰 · 剑鱼", as_octopus: "饰 · 章鱼", roles_jeff: "导演 · 设计 · 开发 · 技术美术", roles_sheldon: "设计 · 原画", roles_haocheng: "设计 · 工程师", roles_pb: "设计 · 环境美术", roles_uesugi: "设计 · 环境美术", thanksT: "特别鸣谢", thanksW: "好友 EHSV", thanksY: "感谢允许我们使用他的部分歌曲作为游戏配乐", 
       htmlLang: "zh-CN", docTitle: "愿此身如风 · Light as Wind", name: "中文",
       skip: "跳到正文", title: "愿此身如风", subtitle: "～去往天空深蓝的彼方",
       aboutH: "游戏简介",
@@ -12,7 +12,7 @@
       poem1: "听说，海的尽头，\n是一片深蓝色的天空。",
       poem2: "梦总有醒来的时候。\n但现在，旅途还没有结束。",
       poem3: "所以啊，在醒来之前，\n再往前走一点吧。",
-      itchGo: "前往 itch.io", soon: "敬请期待", itchSoon: "即将登陆 itch.io", next: "下一页",
+      itchGo: "前往 itch.io", soon: "敬请期待", next: "下一页",
       qq: "QQ 群", mail: "邮箱", copied: "已复制 QQ 群号 153707643",
       clipAlt: "一群水母从海底缓缓上升", pause: "暂停", play: "播放",
       altA: "幽暗的海底剧场里，一束光照着弹竖琴的玩偶海星，水母在四周漂浮",
@@ -23,7 +23,7 @@
       posterAlt: "海报：蓝天下白发少女的侧脸，白鸽飞过"
     },
     en: {
-      teamH: "The Team", teamSub: "Each of us plays a sea creature in the game.", as_starfish: "as the Starfish", as_slug: "as the Sea Slug", as_scallop: "as the Giant Scallop", as_swordfish: "as the Swordfish", as_octopus: "as the Octopus", roles_jeff: "Director · Designer · Developer · Technical Artist", roles_sheldon: "Designer · Concept Artist", roles_haocheng: "Designer · Engineer", roles_pb: "Designer · Environment Artist", roles_uesugi: "Designer · Environment Artist", thanksT: "Special Thanks", thanksW: "Our friend EHSV", thanksY: "For letting us use some of their songs in the game", 
+      teamH: "The Team", as_starfish: "as the Starfish", as_slug: "as the Sea Slug", as_scallop: "as the Giant Scallop", as_swordfish: "as the Swordfish", as_octopus: "as the Octopus", roles_jeff: "Director · Designer · Developer · Technical Artist", roles_sheldon: "Designer · Concept Artist", roles_haocheng: "Designer · Engineer", roles_pb: "Designer · Environment Artist", roles_uesugi: "Designer · Environment Artist", thanksT: "Special Thanks", thanksW: "Our friend EHSV", thanksY: "For letting us use some of their songs in the game", 
       htmlLang: "en", docTitle: "Light as Wind · 愿此身如风", name: "English",
       skip: "Skip to content", title: "Light as Wind", subtitle: "~ To the Far Side of Deep Blue Sky",
       aboutH: "About the game",
@@ -32,7 +32,7 @@
       poem1: "They say that where the sea ends, there is a sky of deep blue.",
       poem2: "Every dream ends in waking. But not yet: the journey isn't over.",
       poem3: "So, before you wake, go a little further.",
-      itchGo: "Visit on itch.io", soon: "Coming soon", itchSoon: "Coming to itch.io", next: "Next page",
+      itchGo: "Visit on itch.io", soon: "Coming soon", next: "Next page",
       qq: "QQ group", mail: "Email", copied: "Copied QQ group number 153707643",
       clipAlt: "A swarm of jellyfish slowly rising from the seabed", pause: "Pause", play: "Play",
       altA: "In a dark undersea theatre, a beam of light falls on a plush starfish playing a harp while jellyfish drift around",
@@ -43,7 +43,7 @@
       posterAlt: "Poster: a white-haired girl in profile against a blue sky, white doves flying past"
     },
     ja: {
-      teamH: "制作メンバー", teamSub: "メンバーはそれぞれ、ゲームの中で海の生き物を演じています。", as_starfish: "ヒトデ役", as_slug: "ウミウシ役", as_scallop: "大きなホタテ役", as_swordfish: "カジキ役", as_octopus: "タコ役", roles_jeff: "ディレクター · デザイナー · 開発 · テクニカルアーティスト", roles_sheldon: "デザイナー · コンセプトアーティスト", roles_haocheng: "デザイナー · エンジニア", roles_pb: "デザイナー · 背景アーティスト", roles_uesugi: "デザイナー · 背景アーティスト", thanksT: "スペシャルサンクス", thanksW: "友人の EHSV", thanksY: "一部の楽曲をゲーム音楽として使わせてくれたことに感謝します", 
+      teamH: "制作メンバー", as_starfish: "ヒトデ役", as_slug: "ウミウシ役", as_scallop: "大きなホタテ役", as_swordfish: "カジキ役", as_octopus: "タコ役", roles_jeff: "ディレクター · デザイナー · 開発 · テクニカルアーティスト", roles_sheldon: "デザイナー · コンセプトアーティスト", roles_haocheng: "デザイナー · エンジニア", roles_pb: "デザイナー · 背景アーティスト", roles_uesugi: "デザイナー · 背景アーティスト", thanksT: "スペシャルサンクス", thanksW: "友人の EHSV", thanksY: "一部の楽曲をゲーム音楽として使わせてくれたことに感謝します", 
       htmlLang: "ja", docTitle: "この身、風のごとく · Light as Wind", name: "日本語",
       skip: "本文へスキップ", title: "この身、風のごとく", subtitle: "〜深く青い空の彼方へ",
       aboutH: "ゲーム紹介",
@@ -52,7 +52,7 @@
       poem1: "海の果てには、\n深い青色の空があるらしい。",
       poem2: "夢はいつか覚めるもの。\nでも今は、旅はまだ終わっていない。",
       poem3: "だから、目が覚める前に、\nもう少しだけ先へ進もう。",
-      itchGo: "itch.io へ", soon: "近日公開", itchSoon: "itch.io にて近日公開", next: "次のページ",
+      itchGo: "itch.io へ", soon: "近日公開", next: "次のページ",
       qq: "QQ グループ", mail: "メール", copied: "QQ グループ番号 153707643 をコピーしました",
       clipAlt: "海底からゆっくり昇っていくクラゲの群れ", pause: "一時停止", play: "再生",
       altA: "暗い海底の劇場で、ハープを弾くぬいぐるみのヒトデに光が差し、まわりをクラゲが漂う",
@@ -63,7 +63,7 @@
       posterAlt: "ポスター：青空を背に白い髪の少女の横顔、白い鳩が飛んでいく"
     },
     ko: {
-      teamH: "제작진", teamSub: "우리는 각자 게임 속에서 바다 생물 하나를 연기합니다.", as_starfish: "불가사리 역", as_slug: "갯민숭달팽이 역", as_scallop: "큰 가리비 역", as_swordfish: "황새치 역", as_octopus: "문어 역", roles_jeff: "디렉터 · 디자이너 · 개발 · 테크니컬 아티스트", roles_sheldon: "디자이너 · 콘셉트 아티스트", roles_haocheng: "디자이너 · 엔지니어", roles_pb: "디자이너 · 환경 아티스트", roles_uesugi: "디자이너 · 환경 아티스트", thanksT: "특별히 감사드립니다", thanksW: "친구 EHSV", thanksY: "일부 곡을 게임 음악으로 쓸 수 있게 해 준 것에 감사드립니다", 
+      teamH: "제작진", as_starfish: "불가사리 역", as_slug: "갯민숭달팽이 역", as_scallop: "큰 가리비 역", as_swordfish: "황새치 역", as_octopus: "문어 역", roles_jeff: "디렉터 · 디자이너 · 개발 · 테크니컬 아티스트", roles_sheldon: "디자이너 · 콘셉트 아티스트", roles_haocheng: "디자이너 · 엔지니어", roles_pb: "디자이너 · 환경 아티스트", roles_uesugi: "디자이너 · 환경 아티스트", thanksT: "특별히 감사드립니다", thanksW: "친구 EHSV", thanksY: "일부 곡을 게임 음악으로 쓸 수 있게 해 준 것에 감사드립니다", 
       htmlLang: "ko", docTitle: "이 몸 바람처럼 · Light as Wind", name: "한국어",
       skip: "본문으로 건너뛰기", title: "이 몸 바람처럼", subtitle: "~ 깊고 푸른 하늘 저편으로",
       aboutH: "게임 소개",
@@ -72,7 +72,7 @@
       poem1: "바다의 끝에는 깊고 푸른 하늘이 있다고 해요.",
       poem2: "꿈은 언젠가 깨기 마련이죠. 하지만 지금은, 여행이 아직 끝나지 않았어요.",
       poem3: "그러니까, 깨어나기 전에 조금만 더 앞으로 가 봐요.",
-      itchGo: "itch.io로 가기", soon: "곧 공개", itchSoon: "곧 itch.io에서 만나요", next: "다음 페이지",
+      itchGo: "itch.io로 가기", soon: "곧 공개", next: "다음 페이지",
       qq: "QQ 그룹", mail: "이메일", copied: "QQ 그룹 번호 153707643 를 복사했습니다",
       clipAlt: "해저에서 천천히 떠오르는 해파리 떼", pause: "일시정지", play: "재생",
       altA: "어두운 해저 극장에서 하프를 켜는 인형 불가사리에게 빛이 내리고, 주위로 해파리가 떠다닌다",
@@ -150,6 +150,9 @@
       else fallback();
     });
   });
+
+  // itch.io button without a page yet: stays put
+  each('.itch-btn[href="#itch"]', function (a) { a.addEventListener("click", function (e) { e.preventDefault(); }); });
 
   // Story clip: plays only while on screen, never with reduced motion.
   var video = document.getElementById("story-video");

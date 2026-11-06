@@ -104,7 +104,7 @@
   <!-- the poster's edge colours seeping down into the paper -->
   <div class="bleed" aria-hidden="true"></div>
 
-  <!-- Page 2: story and itch.io -->
+  <!-- Page 2: story -->
   <section id="play" class="play" aria-labelledby="play-h">
     <div class="inner">
       <div class="story">
@@ -134,7 +134,7 @@
 穿过海洋，追寻远方的天空。</p>
           <p class="motto" data-i18n="motto">愿此身如风，去往天空深蓝的彼方。</p>
           <!-- ITCH LINK: put the game's itch.io page URL in href (e.g. https://huxxshadow.itch.io/light-as-wind).
-               While it is "#itch" the button shows "coming soon" and scrolls to the itch.io slot below. -->
+               While it is "#itch" the button shows "coming soon" and goes nowhere. -->
           <a class="itch-btn" href="#itch">
             <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.6c.2-1.7.8-3.1 1.7-4.4 4.2-.5 8.4-.5 12.6 0 .9 1.3 1.5 2.7 1.7 4.4M4 9.6c.5 1.4 2.6 1.4 3.2 0 .6 1.4 2.6 1.4 3.2 0 .6 1.4 2.6 1.4 3.2 0 .6 1.4 2.6 1.4 3.2 0 .6 1.4 2.6 1.4 3.2 0M5.3 11c-.2 2.6-.1 5.2.3 7.8 4.3.5 8.6.5 12.9 0 .4-2.6.5-5.2.3-7.8M9.4 17.2c1.7.7 3.5.7 5.2 0"/><circle class="dot" cx="9.6" cy="14.2" r="1.1"/><circle class="dot" cx="14.4" cy="14.2" r="1.1"/></svg>
             <span data-i18n="itchGo">前往 itch.io</span>
@@ -152,15 +152,6 @@
           </div>
         </div>
       </div>
-      <div class="itch" id="itch">
-        <!-- ITCH EMBED: replace this placeholder with the itch.io widget, e.g.
-             <iframe src="https://itch.io/embed/GAME_ID?dark=false" width="552" height="167" title="Light as Wind on itch.io" loading="lazy"></iframe>
-             (itch.io → Edit game → Distribute → Embed game) -->
-        <div class="itch-slot">
-          <span class="badge" data-i18n="soon">敬请期待</span>
-          <span data-i18n="itchSoon">即将登陆 itch.io</span>
-        </div>
-      </div>
 
     </div>
   </section>
@@ -168,7 +159,6 @@
   <!-- Page 3: the team (names, roles and portraits are the game's own credits; portraits: tools/cast_portraits.py) -->
   <section id="team" class="team" aria-labelledby="team-h">
     <h2 id="team-h" data-i18n="teamH">制作成员</h2>
-    <p class="team-sub" data-i18n="teamSub">每个人在游戏里，都演了一只海洋生物。</p>
     <ul class="cards">
       <li class="card">
         <img class="pixel" src="/assets/img/cast-starfish.png" width="330" height="400" loading="lazy" decoding="async" alt="" >
