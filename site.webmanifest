@@ -1,0 +1,11 @@
+{
+  "name": "Light as Wind · 愿此身如风",
+  "short_name": "Light as Wind",
+  "icons": [
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#4381ef",
+  "background_color": "#061226",
+  "display": "browser"
+}

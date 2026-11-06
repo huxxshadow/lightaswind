@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN" data-lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>愿此身如风 · Light as Wind</title>
+<meta name="description" content="《愿此身如风》Light as Wind — 一款手工打造的像素风海洋横版游戏，所有模型与动画均由程序生成。A hand-made, fully procedural pixel-art ocean side-scroller.">
+<link rel="canonical" href="https://lightaswind.com/">
+<meta name="theme-color" content="#4381ef">
+<meta name="color-scheme" content="dark">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Light as Wind · 愿此身如风">
+<meta property="og:title" content="愿此身如风 · Light as Wind">
+<meta property="og:description" content="去往天空深蓝的彼方。To the Far Side of Deep Blue Sky — a hand-made, fully procedural pixel-art ocean side-scroller.">
+<meta property="og:url" content="https://lightaswind.com/">
+<meta property="og:image" content="https://lightaswind.com/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Light as Wind poster: a white-haired girl in profile against a blue sky with white doves">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="愿此身如风 · Light as Wind">
+<meta name="twitter:description" content="To the Far Side of Deep Blue Sky — a hand-made, fully procedural pixel-art ocean side-scroller.">
+<meta name="twitter:image" content="https://lightaswind.com/og-en.jpg">
+
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<script>
+  // Pick the language before first paint: saved choice, else the browser's.
+  (function () {
+    var ok = { zh: 1, en: 1, ja: 1, ko: 1 }, l = null;
+    try { l = localStorage.getItem("law-lang"); } catch (e) {}
+    if (!ok[l]) {
+      var list = navigator.languages || [navigator.language || "en"];
+      for (var i = 0; i < list.length && !ok[l]; i++) {
+        var c = String(list[i]).toLowerCase().slice(0, 2);
+        if (ok[c]) l = c;
+      }
+    }
+    document.documentElement.setAttribute("data-lang", ok[l] ? l : "en");
+  })();
+</script>
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">跳到正文</a>
+
+<header class="bar">
+  <a class="brand" href="/" aria-label="Light as Wind">
+    <img src="/assets/img/mascot.webp" width="40" height="40" alt="">
+  </a>
+  <nav class="langs" aria-label="Language">
+    <button type="button" data-set-lang="zh" lang="zh-CN">中文</button>
+    <button type="button" data-set-lang="en" lang="en">EN</button>
+    <button type="button" data-set-lang="ja" lang="ja">日本語</button>
+    <button type="button" data-set-lang="ko" lang="ko">한국어</button>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="game-title">
+    <div class="hero-art" role="img" data-i18n-aria="posterAlt" aria-label="海报：蓝天下白发少女的侧脸，白鸽飞过"></div>
+    <div class="hero-titles">
+      <img class="t-zh" src="/assets/img/title-zh.webp" width="1011" height="260" alt="">
+      <img class="t-zh sub" src="/assets/img/subtitle-zh.webp" width="1011" height="260" alt="">
+      <img class="t-en" src="/assets/img/title-en.webp" width="1011" height="260" alt="">
+      <img class="t-en sub" src="/assets/img/subtitle-en.webp" width="1011" height="260" alt="">
+    </div>
+    <h1 id="game-title" class="sr"><span data-i18n="title">愿此身如风</span> <span data-i18n="subtitle">～去往天空深蓝的彼方</span></h1>
+  </section>
+
+  <section class="intro">
+    <p class="local-title" data-i18n="title" aria-hidden="true">愿此身如风</p>
+    <p class="local-sub" data-i18n="subtitle" aria-hidden="true">～去往天空深蓝的彼方</p>
+    <p class="lead" data-i18n="lead">一款手工打造的像素风海洋横版游戏。<br>每一个模型、每一段动画，都由程序生成。</p>
+    <!-- PLACEHOLDER: release date, platforms and store links are not announced yet.
+         Replace this pill with real store buttons when they exist. -->
+    <p class="status"><span data-i18n="soon">敬请期待</span><span class="dot" aria-hidden="true">·</span><span data-i18n="tba">发售日期与平台待公布</span></p>
+  </section>
+
+  <section class="gallery" aria-labelledby="gallery-h">
+    <h2 id="gallery-h" class="sr" data-i18n="galleryH">游戏画面</h2>
+
+    <figure class="clip">
+      <video id="loop" class="pixel" muted loop playsinline preload="none"
+             poster="/assets/media/loop-poster.webp" width="1280" height="720"
+             data-i18n-aria="clipAlt" aria-label="一群水母从海底缓缓上升">
+        <source src="/assets/media/loop.mp4" type="video/mp4">
+      </video>
+      <button type="button" class="playpause" aria-pressed="false" data-i18n-aria="pause" aria-label="暂停">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M7 5h3v14H7zM14 5h3v14h-3z"/><path class="i-play" d="M8 5v14l11-7z"/></svg>
+      </button>
+    </figure>
+
+    <ul class="stills">
+      <li><a href="/assets/img/still-harp-1792.webp"><img class="pixel" src="/assets/img/still-harp-896.webp" srcset="/assets/img/still-harp-896.webp 896w, /assets/img/still-harp-1792.webp 1792w" sizes="(min-width: 760px) 45vw, 92vw" width="896" height="504" loading="lazy" decoding="async" data-i18n-alt="altHarp" alt="幽暗的海底剧场里，一束光照着弹竖琴的玩偶海星，水母在四周漂浮"></a></li>
+      <li><a href="/assets/img/still-coral-1792.webp"><img class="pixel" src="/assets/img/still-coral-896.webp" srcset="/assets/img/still-coral-896.webp 896w, /assets/img/still-coral-1792.webp 1792w" sizes="(min-width: 760px) 45vw, 92vw" width="896" height="504" loading="lazy" decoding="async" data-i18n-alt="altCoral" alt="浅海的巨大珊瑚旁，一只红色螃蟹在沙地上爬行"></a></li>
+      <li><a href="/assets/img/still-jellyfish-1792.webp"><img class="pixel" src="/assets/img/still-jellyfish-896.webp" srcset="/assets/img/still-jellyfish-896.webp 896w, /assets/img/still-jellyfish-1792.webp 1792w" sizes="(min-width: 760px) 45vw, 92vw" width="896" height="504" loading="lazy" decoding="async" data-i18n-alt="altJelly" alt="水母群从海底向上漂去，玩偶海星站在海草之间"></a></li>
+      <li><a href="/assets/img/still-deep-1792.webp"><img class="pixel" src="/assets/img/still-deep-896.webp" srcset="/assets/img/still-deep-896.webp 896w, /assets/img/still-deep-1792.webp 1792w" sizes="(min-width: 760px) 45vw, 92vw" width="896" height="504" loading="lazy" decoding="async" data-i18n-alt="altDeep" alt="漆黑的深海里，一只发光的水母漂过珊瑚丛"></a></li>
+    </ul>
+  </section>
+
+  <section class="community" aria-labelledby="community-h">
+    <h2 id="community-h" data-i18n="communityH">加入我们</h2>
+    <ul class="links">
+      <li>
+        <a class="card" href="https://discord.gg/FENe6exc" rel="noopener" target="_blank">
+          <span class="k">Discord</span>
+          <span class="v" data-i18n="discordV">加入服务器</span>
+        </a>
+      </li>
+      <li>
+        <button type="button" class="card" data-copy="153707643">
+          <span class="k" data-i18n="qqK">QQ 群</span>
+          <span class="v">153707643</span>
+          <span class="hint" data-i18n="copy" aria-live="polite">点击复制</span>
+        </button>
+      </li>
+      <li>
+        <a class="card" href="mailto:3324557103@qq.com">
+          <span class="k" data-i18n="mailK">邮箱</span>
+          <span class="v">3324557103@qq.com</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer class="foot">
+  <img src="/assets/icons/mascot-256.png" width="56" height="56" alt="" loading="lazy">
+  <p data-i18n="footNote">全部模型与动画由程序生成，不含 AI 生成素材。</p>
+  <p class="small">© 2026 <span data-i18n="title">愿此身如风</span> · Light as Wind</p>
+</footer>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
