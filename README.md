@@ -11,6 +11,8 @@ assets/img|icons   generated images and icons
 og-en.jpg, og-zh.jpg     social share cards
 CNAME               custom domain for GitHub Pages
 tools/build_assets.py    regenerates assets/img and icons from the source art
+tools/poster_layers.py   splits the poster into the hero's parallax layers (sky, girl)
+tools/cast_portraits.py  renders the game's credit portraits for the team cards
 tools/subset_font.py     rebuilds assets/fonts/xiaolai-subset.woff2 (Xiaolai, SIL OFL) after text changes
 ```
 

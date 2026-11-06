@@ -29,17 +29,9 @@ def save_webp(im, path, q=82):
     im.save(path, "WEBP", quality=q, method=6)
 
 
-# ---- Posters (painted art: smooth scaling) --------------------------------
-for lang, name in (("zh", "海报 中文.png"), ("en", "海报英文.png")):
-    im = Image.open(POSTERS / name).convert("RGB")
-    for w in (1920, 1280, 800):
-        save_webp(im.resize((w, w * 1080 // 1920), Image.LANCZOS), IMG / f"poster-{lang}-{w}.webp")
-
-# Portrait crop for phones: the girl's profile, no baked-in title text.
+# ---- Poster ----------------------------------------------------------------
+# The hero itself is built from layers (tools/poster_layers.py); here only the bleed and the share cards.
 en = Image.open(POSTERS / "海报英文.png").convert("RGB")
-crop = en.crop((860, 0, 1640, 670))  # 780x670, stops above the baked-in title
-for w in (780, 520):
-    save_webp(crop.resize((w, w * 670 // 780), Image.LANCZOS), IMG / f"poster-portrait-{w}.webp")
 
 # Bleed: only the colours of the poster's bottom edge (no shapes), blended
 # down into the page's paper colour. Shown under the first screen.

@@ -89,12 +89,18 @@
 <main>
   <!-- Page 1: the poster -->
   <section id="top" class="hero" aria-labelledby="game-title">
-    <div class="hero-art" role="img" data-i18n-aria="posterAlt" aria-label="海报：蓝天下白发少女的侧脸，白鸽飞过"></div>
-    <div class="hero-titles" aria-hidden="true">
-      <img class="t-zh" src="/assets/img/title-zh.webp" width="1011" height="260" alt="">
-      <img class="t-zh sub" src="/assets/img/subtitle-zh.webp" width="1011" height="260" alt="">
-      <img class="t-en" src="/assets/img/title-en.webp" width="1011" height="260" alt="">
-      <img class="t-en sub" src="/assets/img/subtitle-en.webp" width="1011" height="260" alt="">
+    <!-- The poster in layers (tools/poster_layers.py): sky with doves at the back, the girl, the line-art words in
+         front. They drift apart a little with the pointer and with scrolling. -->
+    <div class="stage" role="img" data-i18n-aria="posterAlt" aria-label="海报：蓝天下白发少女的侧脸，白鸽飞过">
+      <div class="layer sky" data-depth="0.25"></div>
+      <div class="layer girl" data-depth="0.6"></div>
+      <div class="layer words" data-depth="1">
+        <img class="w-title t-zh" src="/assets/img/title-zh.webp" width="1011" height="260" alt="">
+        <img class="w-sub t-zh" src="/assets/img/subtitle-zh.webp" width="1011" height="260" alt="">
+        <img class="w-title t-en" src="/assets/img/title-en.webp" width="1011" height="260" alt="">
+        <img class="w-sub t-en" src="/assets/img/subtitle-en.webp" width="1011" height="260" alt="">
+        <img class="w-mascot" src="/assets/img/mascot.webp" width="260" height="260" alt="">
+      </div>
     </div>
     <h1 id="game-title" class="sr"><span data-i18n="title">愿此身如风</span> <span data-i18n="subtitle">～去往天空深蓝的彼方</span></h1>
     <a class="down" href="#play" data-i18n-aria="next" aria-label="下一页">

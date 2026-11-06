@@ -175,6 +175,43 @@
     }
   }
 
+  // Hero parallax: the poster's layers drift apart with the pointer (and a little with scrolling).
+  (function () {
+    var stage = document.querySelector(".stage");
+    if (!stage || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var heroEl = document.getElementById("top");
+    var layers = Array.prototype.map.call(stage.querySelectorAll(".layer"), function (el) {
+      var base = getComputedStyle(el).transform;
+      return { el: el, d: parseFloat(el.getAttribute("data-depth")) || 0, base: base === "none" ? "" : " " + base };
+    });
+    var tx = 0, ty = 0, x = 0, y = 0, sy = window.scrollY, raf = 0;
+    function draw() {
+      if (sy > heroEl.offsetHeight) return;
+      for (var k = 0; k < layers.length; k++) {
+        var L = layers[k];
+        // pointer: up to ~22 px for the words, less further back; scroll: the back lags behind, the front leads
+        var px = -x * 22 * L.d, py = -y * 14 * L.d + sy * (0.12 - 0.18 * L.d);
+        L.el.style.transform = "translate3d(" + px.toFixed(2) + "px," + py.toFixed(2) + "px,0)" + L.base;
+      }
+    }
+    function frame() {
+      x += (tx - x) * 0.08; y += (ty - y) * 0.08;
+      draw();
+      raf = Math.abs(tx - x) > 0.001 || Math.abs(ty - y) > 0.001 ? requestAnimationFrame(frame) : 0;
+    }
+    function kick() { if (!raf) raf = requestAnimationFrame(frame); }
+    if (window.matchMedia("(pointer: fine)").matches) {
+      window.addEventListener("pointermove", function (e) {
+        tx = (e.clientX / window.innerWidth) * 2 - 1;
+        ty = (e.clientY / window.innerHeight) * 2 - 1;
+        kick();
+      }, { passive: true });
+      document.documentElement.addEventListener("pointerleave", function () { tx = 0; ty = 0; kick(); });
+    }
+    window.addEventListener("scroll", function () { sy = window.scrollY; draw(); }, { passive: true });
+    draw();
+  })();
+
   // Header: transparent over the poster, paper-coloured once past it.
   var head = document.querySelector(".site-head");
   var hero = document.getElementById("top");

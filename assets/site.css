@@ -118,20 +118,34 @@ button { font: inherit; color: inherit; }
 /* ---- Page 1: poster ---- */
 .hero { position: relative; z-index: 1; height: 100vh; height: 100svh; min-height: 480px; overflow: hidden; }
 main { overflow-x: clip; }
-.hero-art {
-  position: absolute; inset: 0;
-  background: var(--sky) 0% 85% / cover no-repeat;
-  background-image: image-set(url(img/poster-zh-1280.webp) 1x, url(img/poster-zh-1920.webp) 2x);
-  /* let the bottom edge dissolve instead of ending in a hard line */
-  /* a long, eased dissolve so there is no line where the poster ends */
+/* The stage is the poster's 16:9 frame, sized and placed exactly like a "cover, 0% 85%" background, so every
+   layer lines up with the original. Positions inside are the poster's own pixels as percentages. */
+.stage {
+  --sw: max(100vw, 177.78svh);
+  position: absolute; left: 0; width: var(--sw); height: calc(var(--sw) * .5625);
+  top: calc((100svh - var(--sw) * .5625) * .85);
   -webkit-mask-image: linear-gradient(#000 0, #000 78%, rgba(0,0,0,.92) 85%, rgba(0,0,0,.75) 90%, rgba(0,0,0,.45) 95%, rgba(0,0,0,.15) 98.5%, transparent 100%);
           mask-image: linear-gradient(#000 0, #000 78%, rgba(0,0,0,.92) 85%, rgba(0,0,0,.75) 90%, rgba(0,0,0,.45) 95%, rgba(0,0,0,.15) 98.5%, transparent 100%);
 }
-html:not([data-lang="zh"]) .hero-art { background-image: image-set(url(img/poster-en-1280.webp) 1x, url(img/poster-en-1920.webp) 2x); }
+.layer { position: absolute; inset: 0; will-change: transform; }
+.sky { background: var(--sky) center / 100% 100% no-repeat; background-image: image-set(url(img/hero-sky-1280.webp) 1x, url(img/hero-sky-1920.webp) 2x); transform: scale(1.06); }
+.girl { background: center / 100% 100% no-repeat; background-image: image-set(url(img/hero-girl-1280.webp) 1x, url(img/hero-girl-1920.webp) 2x); transform: scale(1.04); transform-origin: 100% 50%; }
 @media (min-width: 1400px) {
-  .hero-art { background-image: url(img/poster-zh-1920.webp); }
-  html:not([data-lang="zh"]) .hero-art { background-image: url(img/poster-en-1920.webp); }
+  .sky { background-image: url(img/hero-sky-1920.webp); }
+  .girl { background-image: url(img/hero-girl-1920.webp); }
 }
+.words img { position: absolute; display: none; height: auto; }
+html[data-lang="zh"] .words .t-zh, html:not([data-lang="zh"]) .words .t-en { display: block; }
+.words .w-title { left: 2.552%; top: 57.407%; width: 52.656%; }
+.words .w-sub.t-zh { left: 2.604%; top: 72.963%; width: 52.656%; }
+.words .w-sub.t-en { left: 1.927%; top: 73.889%; width: 52.656%; }
+.words .w-mascot { display: block; left: 49.479%; top: 75.926%; width: 13.542%; }
+/* the words come in once, softly; the little mascot then keeps floating */
+.words .w-title { animation: rise 1.2s .25s cubic-bezier(.2,.7,.2,1) both; }
+.words .w-sub { animation: rise 1.2s .55s cubic-bezier(.2,.7,.2,1) both; }
+.words .w-mascot { animation: rise 1.2s .85s cubic-bezier(.2,.7,.2,1) both, float 5s 2.1s ease-in-out infinite; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); filter: blur(3px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes float { 50% { transform: translateY(-4%) rotate(-2deg); } }
 
 /* The poster's colours keep seeping down: just the colours of its bottom
    edge (no shapes), blended into the paper under the first screen. */
@@ -142,7 +156,6 @@ html:not([data-lang="zh"]) .hero-art { background-image: image-set(url(img/poste
   background: url(img/bleed.webp) left top / max(100vw, 177.78vh) 100% no-repeat;
   pointer-events: none;
 }
-.hero-titles { display: none; }
 .down {
   position: absolute; left: 50%; bottom: max(22px, env(safe-area-inset-bottom)); margin-left: -24px;
   width: 48px; height: 40px; display: grid; place-items: center; color: #fff;
@@ -152,23 +165,26 @@ html:not([data-lang="zh"]) .hero-art { background-image: image-set(url(img/poste
 .down svg { width: 40px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 @keyframes bob { 50% { transform: translateY(5px); } }
 
-/* Portrait screens: crop of the girl's profile, line-art title over the sky. */
+/* Portrait screens: the girl's profile cropped at the top, the words stacked over the sky below it. */
 @media (max-aspect-ratio: 1/1) {
-  .hero-art, html:not([data-lang="zh"]) .hero-art {
-    inset: 0 0 auto 0; height: 64%;
-    background-image: image-set(url(img/poster-portrait-520.webp) 1x, url(img/poster-portrait-780.webp) 2x);
-    background-position: 72% top;
-  }
   .hero { background: linear-gradient(var(--sky) 0, var(--sky) 74%, #a9c6f6 90%, #dce7f8 100%); }
-  .hero-art, html:not([data-lang="zh"]) .hero-art { -webkit-mask-image: none; mask-image: none; }
-  .hero-art::after { content: ""; position: absolute; inset: auto 0 -1px 0; height: 35%; background: linear-gradient(transparent, var(--sky)); }
+  .stage { inset: 0; width: auto; height: auto; -webkit-mask-image: none; mask-image: none; }
+  .sky, .girl { bottom: auto; height: 64%; background-size: cover; background-position: 72% top; }
+  .sky { background-image: image-set(url(img/hero-sky-p-520.webp) 1x, url(img/hero-sky-p-780.webp) 2x); }
+  .girl { background-image: image-set(url(img/hero-girl-p-520.webp) 1x, url(img/hero-girl-p-780.webp) 2x); transform-origin: 70% 30%; 
+    -webkit-mask-image: linear-gradient(#000 0, #000 62%, transparent 100%); mask-image: linear-gradient(#000 0, #000 62%, transparent 100%); }
+  .sky::after { content: ""; position: absolute; inset: auto 0 -1px 0; height: 35%; background: linear-gradient(transparent, var(--sky)); }
+  .words { top: 56%; bottom: auto; padding: 0 24px; }
+  .words img, .words .w-title, .words .w-sub.t-zh, .words .w-sub.t-en { position: relative; left: auto; top: auto; margin: 0 auto; }
+  .words .w-title { width: min(100%, 520px); }
+  .words .w-sub { width: min(86%, 440px); margin-top: -5%; }
+  .words .w-mascot { display: none; }
   .bleed::before { top: 0; height: 40vh; background: linear-gradient(#dce7f8, var(--paper)); }
   .down { color: var(--ink); filter: none; }
-  .hero-titles { display: block; position: absolute; left: 0; right: 0; top: 58%; padding: 0 24px; }
-  .hero-titles img { width: min(100%, 520px); margin: 0 auto; display: none; }
-  .hero-titles .sub { width: min(86%, 440px); margin-top: -5%; }
-  html[data-lang="zh"] .hero-titles .t-zh,
-  html:not([data-lang="zh"]) .hero-titles .t-en { display: block; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .words .w-title, .words .w-sub, .words .w-mascot { animation: none; }
 }
 
 /* ---- Page 2: paper ---- */
