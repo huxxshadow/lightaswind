@@ -197,12 +197,13 @@ html[data-lang="zh"] .words .t-zh, html:not([data-lang="zh"]) .words .t-en { dis
 .play .inner { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: clamp(96px, 16vh, 180px) 0 24px; }
 
 /* ---- Story ---- */
+/* the opening two lines, centred right under the poster */
 .lead {
-  margin: 0; max-width: 21em; color: var(--ink-soft);
-  font-size: clamp(17px, 1.45vw, 20px); line-height: 2.1; letter-spacing: .04em; text-wrap: balance;
+  margin: 0 auto clamp(64px, 10vh, 112px); max-width: 24em; text-align: center; color: var(--ink);
+  font-size: clamp(18px, 1.6vw, 23px); line-height: 2; letter-spacing: .05em; text-wrap: balance;
   white-space: pre-line;
 }
-html[data-lang="zh"] .lead { max-width: 31em; font-size: clamp(16px, 1.25vw, 19px); } /* two lines: the journey, then the sea and the sky */
+html[data-lang="zh"] .lead { max-width: 32em; } /* two lines: the journey, then the sea and the sky */
 .motto {
   margin: clamp(48px, 8vh, 84px) 0 0; max-width: 12em;
   font-size: clamp(30px, 3.6vw, 46px); line-height: 1.55; letter-spacing: .08em; text-wrap: balance;
@@ -287,7 +288,7 @@ html[data-lang="en"] .motto { letter-spacing: .02em; max-width: 16em; }
 }
 
 /* Latin and Hangul run longer per line than CJK */
-html[data-lang="en"] .lead, html[data-lang="ko"] .lead { max-width: 29em; }
+html[data-lang="en"] .lead, html[data-lang="ko"] .lead { max-width: 30em; }
 html[data-lang="en"] .poem, html[data-lang="ko"] .poem { max-width: 32em; }
 
 /* ---- Story: picture on the left, words on the right ---- */
@@ -327,7 +328,7 @@ html[data-lang="en"] .poem, html[data-lang="ko"] .poem { max-width: 32em; }
   .story { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(56px, 6vw, 112px); align-items: center; }
   .story-text { align-items: flex-start; text-align: left; }
   .story-text .wave { margin-left: 0; }
-  .story-text .motto { margin-top: clamp(36px, 5vh, 56px); }
+  .story-text .motto { margin-top: 0; }
   .story-text .wave { margin-bottom: clamp(36px, 5vh, 56px); }
   html[data-lang="en"] .poem p, html[data-lang="ko"] .poem p { text-align: left; }
   html[data-lang="en"] .poem, html[data-lang="ko"] .poem { text-align: left; }
