@@ -183,15 +183,19 @@ html[data-lang="en"] .poem, html[data-lang="ko"] .poem { max-width: 32em; }
 
 /* ---- Story: picture on the left, words on the right ---- */
 .story { width: 100%; max-width: 1240px; display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(40px, 6vh, 64px); align-items: center; }
+/* video on top, then the two screenshots, each a little smaller and
+   nudged left / right like photos laid on a page */
 .story-art {
-  position: relative; margin: 0 auto; width: 100%; max-width: 680px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(10px, 1.2vw, 16px);
+  position: relative; margin: 0 auto; width: 100%; max-width: 720px;
+  display: flex; flex-direction: column; gap: clamp(18px, 2.4vw, 32px);
 }
-.story-art::before { /* a loose pencil frame, slightly offset behind the pictures */
-  content: ""; position: absolute; inset: 14px -14px -14px 14px; z-index: 0;
+.story-art .clip::before { /* a loose pencil frame, offset behind the video */
+  content: ""; position: absolute; inset: 14px -14px -14px 14px; z-index: -1;
   border: 1.6px solid var(--line); border-radius: 12px 260px 10px 240px / 240px 12px 260px 10px;
 }
-.story-art .clip { grid-column: 1 / -1; position: relative; z-index: 1; margin: 0; }
+.story-art .shot:nth-of-type(1) { width: 88%; align-self: flex-end; }
+.story-art .shot:nth-of-type(2) { width: 88%; align-self: flex-start; }
+.story-art .clip { position: relative; z-index: 1; margin: 0; }
 .story-art video, .story-art .shot img {
   display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; background: #2f6f73;
 }
@@ -212,7 +216,9 @@ html[data-lang="en"] .poem, html[data-lang="ko"] .poem { max-width: 32em; }
 .story-text { display: flex; flex-direction: column; align-items: center; }
 
 @media (min-width: 900px) {
-  .story { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(56px, 6vw, 112px); }
+  .story { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(56px, 6vw, 112px); align-items: start; }
+  /* the words stay in view while the pictures scroll past */
+  .story-text { position: sticky; top: max(48px, calc(50vh - 320px)); }
   .story-text { align-items: flex-start; text-align: left; }
   .story-text .wave { margin-left: 0; }
   .story-text .motto { margin-top: clamp(36px, 5vh, 56px); }
