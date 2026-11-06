@@ -212,6 +212,49 @@
     draw();
   })();
 
+  // Gentle reveals as things scroll into view (skipped entirely with reduced motion).
+  (function () {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var groups = [
+      [".lead"], [".story-art"], [".story-text .motto"], [".itch-btn"],
+      [".poem p", 260], [".team h2"], [".cards .card", 140], [".thanks"]
+    ];
+    // Reveal whatever has come above 88% of the screen height - including things a fast scroll or a jump link
+    // went straight past, so nothing can be left hidden.
+    var pending = [];
+    function check() {
+      var line = window.innerHeight * 0.88;
+      pending = pending.filter(function (el) {
+        if (el.getBoundingClientRect().top < line) {
+          el.classList.add("in");
+          // once landed, drop the stagger so hovers respond at once
+          setTimeout(function () { el.style.transitionDelay = ""; }, 2000);
+          return false;
+        }
+        return true;
+      });
+      if (!pending.length) { window.removeEventListener("scroll", onScroll); window.removeEventListener("resize", onScroll); }
+    }
+    var ticking = false;
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; check(); }); } }
+    groups.forEach(function (g) {
+      each(g[0], function (el, k) {
+        el.classList.add("reveal");
+        if (g[1]) el.style.transitionDelay = (k * g[1]) + "ms";
+        pending.push(el);
+      });
+    });
+    // hand-drawn strokes: normalise their length so one dash covers the whole line
+    each(".story-text .wave", function (svg) {
+      Array.prototype.forEach.call(svg.querySelectorAll("path"), function (p) { p.setAttribute("pathLength", "1"); });
+      svg.classList.add("draw");
+      pending.push(svg);
+    });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    requestAnimationFrame(check);
+  })();
+
   // Header: transparent over the poster, paper-coloured once past it.
   var head = document.querySelector(".site-head");
   var hero = document.getElementById("top");

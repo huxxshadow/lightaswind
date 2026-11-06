@@ -334,3 +334,29 @@ html[data-lang="en"] .poem, html[data-lang="ko"] .poem { max-width: 32em; }
   html[data-lang="en"] .poem, html[data-lang="ko"] .poem { text-align: left; }
 }
 @media (min-width: 900px) { html[data-lang="zh"] .story-text .poem, html[data-lang="ja"] .story-text .poem { width: fit-content; } }
+
+/* ---- Gentle motion on the way down (added by site.js only when motion is welcome) ----
+   Things surface as they come into view, like something rising through water; the hand-drawn lines draw
+   themselves; the cards land on the page one after another. Uses the separate translate / scale properties so
+   each element's own rotate / transform stays as it is. */
+.reveal { opacity: 0; translate: 0 22px; transition: opacity .9s ease, translate 1.1s cubic-bezier(.2, .7, .2, 1); }
+.reveal.in { opacity: 1; translate: 0 0; }
+.card.reveal { translate: 0 -26px; scale: 1.04; transition: opacity .7s ease, translate .8s cubic-bezier(.3, 1.4, .5, 1), scale .8s ease, transform .3s ease; }
+.card.reveal.in { translate: 0 0; scale: 1; }
+.card.reveal::before { opacity: 0; transition: opacity .4s ease .5s; }  /* the tape goes on once the card has landed */
+.card.reveal.in::before { opacity: 1; }
+.poem p.reveal { translate: 0 -16px; }   /* the columns are read downwards: they drift down into place */
+.poem p.reveal.in { translate: 0 0; }
+
+/* the wave and the pencil frame draw themselves */
+.draw path { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1.6s cubic-bezier(.5, 0, .3, 1) .3s; }
+.draw.in path { stroke-dashoffset: 0; }
+.story-art.reveal .clip::before { clip-path: inset(0 100% 100% 0); transition: clip-path 1.4s cubic-bezier(.5, 0, .3, 1) .5s; }
+.story-art.reveal.in .clip::before { clip-path: inset(0 0 0 0); }
+
+/* small touches */
+.brand img { transition: rotate .4s cubic-bezier(.3, 1.6, .5, 1); }
+.brand:hover img { rotate: -8deg; }
+.card:active { scale: .98; }
+.story-art .shot img { transition: transform .6s ease, filter .6s ease; }
+.story-art .shot:hover img { filter: saturate(1.12) brightness(1.04); }
