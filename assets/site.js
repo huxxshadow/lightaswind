@@ -11,7 +11,7 @@
       poem1: "听说，海的尽头，\n是一片深蓝色的天空。",
       poem2: "梦总有醒来的时候。\n但现在，旅途还没有结束。",
       poem3: "所以啊，在醒来之前，\n再往前走一点吧。",
-      soon: "敬请期待", itchSoon: "即将登陆 itch.io", next: "下一页",
+      itchGo: "前往 itch.io", soon: "敬请期待", itchSoon: "即将登陆 itch.io", next: "下一页",
       qq: "QQ 群", mail: "邮箱", copied: "已复制 QQ 群号 153707643",
       clipAlt: "一群水母从海底缓缓上升", pause: "暂停", play: "播放",
       altA: "幽暗的海底剧场里，一束光照着弹竖琴的玩偶海星，水母在四周漂浮",
@@ -30,7 +30,7 @@
       poem1: "They say that where the sea ends, there is a sky of deep blue.",
       poem2: "Every dream ends in waking. But not yet: the journey isn't over.",
       poem3: "So, before you wake, go a little further.",
-      soon: "Coming soon", itchSoon: "Coming to itch.io", next: "Next page",
+      itchGo: "Visit on itch.io", soon: "Coming soon", itchSoon: "Coming to itch.io", next: "Next page",
       qq: "QQ group", mail: "Email", copied: "Copied QQ group number 153707643",
       clipAlt: "A swarm of jellyfish slowly rising from the seabed", pause: "Pause", play: "Play",
       altA: "In a dark undersea theatre, a beam of light falls on a plush starfish playing a harp while jellyfish drift around",
@@ -49,7 +49,7 @@
       poem1: "海の果てには、\n深い青色の空があるらしい。",
       poem2: "夢はいつか覚めるもの。\nでも今は、旅はまだ終わっていない。",
       poem3: "だから、目が覚める前に、\nもう少しだけ先へ進もう。",
-      soon: "近日公開", itchSoon: "itch.io にて近日公開", next: "次のページ",
+      itchGo: "itch.io へ", soon: "近日公開", itchSoon: "itch.io にて近日公開", next: "次のページ",
       qq: "QQ グループ", mail: "メール", copied: "QQ グループ番号 153707643 をコピーしました",
       clipAlt: "海底からゆっくり昇っていくクラゲの群れ", pause: "一時停止", play: "再生",
       altA: "暗い海底の劇場で、ハープを弾くぬいぐるみのヒトデに光が差し、まわりをクラゲが漂う",
@@ -68,7 +68,7 @@
       poem1: "바다의 끝에는 깊고 푸른 하늘이 있다고 해요.",
       poem2: "꿈은 언젠가 깨기 마련이죠. 하지만 지금은, 여행이 아직 끝나지 않았어요.",
       poem3: "그러니까, 깨어나기 전에 조금만 더 앞으로 가 봐요.",
-      soon: "곧 공개", itchSoon: "곧 itch.io에서 만나요", next: "다음 페이지",
+      itchGo: "itch.io로 가기", soon: "곧 공개", itchSoon: "곧 itch.io에서 만나요", next: "다음 페이지",
       qq: "QQ 그룹", mail: "이메일", copied: "QQ 그룹 번호 153707643 를 복사했습니다",
       clipAlt: "해저에서 천천히 떠오르는 해파리 떼", pause: "일시정지", play: "재생",
       altA: "어두운 해저 극장에서 하프를 켜는 인형 불가사리에게 빛이 내리고, 주위로 해파리가 떠다닌다",
@@ -173,8 +173,8 @@
   var hero = document.getElementById("top");
   if (head && hero && "IntersectionObserver" in window) {
     new IntersectionObserver(function (e) {
-      head.classList.toggle("solid", !e[0].isIntersecting);
-    }, { rootMargin: "-72px 0px 0px 0px", threshold: 0.12 }).observe(hero);
+      head.classList.toggle("solid", e[0].intersectionRatio < 0.12);
+    }, { rootMargin: "-72px 0px 0px 0px", threshold: [0, 0.12, 0.3] }).observe(hero);
   }
 
   apply(current);

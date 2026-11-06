@@ -191,7 +191,25 @@ html[data-lang="zh"] .lead { max-width: 31em; font-size: clamp(16px, 1.25vw, 19p
   margin: clamp(48px, 8vh, 84px) 0 0; max-width: 12em;
   font-size: clamp(30px, 3.6vw, 46px); line-height: 1.55; letter-spacing: .08em; text-wrap: balance;
 }
-.wave { display: block; width: 92px; height: 12px; margin: 22px auto clamp(48px, 8vh, 80px); fill: none; stroke: var(--line); stroke-width: 1.6; stroke-linecap: round; }
+/* itch.io button: the one "call to action", drawn by hand like the rest */
+.itch-btn {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: clamp(22px, 3.5vh, 34px);
+  padding: 10px 20px 12px 16px; color: var(--ink); font-size: clamp(18px, 1.5vw, 21px); letter-spacing: .04em;
+  border: 1.8px solid var(--ink); border-radius: 16px 220px 14px 200px / 200px 16px 220px 14px;
+  background: rgba(67, 129, 239, .07);
+  box-shadow: 3px 4px 0 -1px rgba(38, 53, 77, .18); /* a pencil shadow, offset like a second stroke */
+  transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+}
+.itch-btn .ic { width: 26px; height: 26px; filter: none; }
+.itch-btn .arrow { width: 24px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s ease; }
+.itch-btn:hover { transform: rotate(-1.5deg) translateY(-1px); background: rgba(67, 129, 239, .13); box-shadow: 4px 6px 0 -1px rgba(38, 53, 77, .2); }
+.itch-btn:hover .arrow { transform: translateX(4px); }
+.itch-btn .soon-tag { display: none; font-size: 14px; color: var(--ink-soft); padding-left: 10px; border-left: 1.4px solid var(--line); }
+/* no itch.io page yet: say so, and point down to the slot instead */
+.itch-btn[href="#itch"] .soon-tag { display: inline; }
+.itch-btn[href="#itch"] .arrow { transform: rotate(90deg); }
+.itch-btn[href="#itch"]:hover .arrow { transform: rotate(90deg) translateX(3px); }
+.wave { display: block; width: 92px; height: 12px; margin: clamp(28px, 4vh, 40px) auto clamp(48px, 8vh, 80px); fill: none; stroke: var(--line); stroke-width: 1.6; stroke-linecap: round; }
 
 /* Chinese & Japanese: the three lines read top-to-bottom, right-to-left,
    each column a little lower than the last, like something drifting. */
