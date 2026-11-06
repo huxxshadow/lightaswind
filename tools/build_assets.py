@@ -41,6 +41,24 @@ crop = en.crop((860, 0, 1640, 670))  # 780x670, stops above the baked-in title
 for w in (780, 520):
     save_webp(crop.resize((w, w * 670 // 780), Image.LANCZOS), IMG / f"poster-portrait-{w}.webp")
 
+# Bleed: only the colours of the poster's bottom edge (no shapes), blended
+# down into the page's paper colour. Shown under the first screen.
+from PIL import ImageFilter
+PAPER = (251, 250, 246)
+edge = en.crop((0, 1050, 1920, 1080)).resize((96, 1), Image.BOX)
+edge = edge.resize((96, 1), Image.BOX).filter(ImageFilter.GaussianBlur(4))
+BW, BH = 96, 160
+bleed = Image.new("RGB", (BW, BH))
+px = bleed.load()
+for y in range(BH):
+    t = y / (BH - 1)
+    k = 1 - (1 - t) ** 2.2  # fast at first, then a long soft tail
+    k = k * k * (3 - 2 * k)
+    for x in range(BW):
+        c = edge.getpixel((x, 0))
+        px[x, y] = tuple(round(c[i] + (PAPER[i] - c[i]) * k) for i in range(3))
+save_webp(bleed.filter(ImageFilter.GaussianBlur(1.5)), IMG / "bleed.webp", q=90)
+
 # Social card (1200x630, cropped from the poster's centre).
 for lang, name in (("zh", "海报 中文.png"), ("en", "海报英文.png")):
     im = Image.open(POSTERS / name).convert("RGB").resize((1200, 675), Image.LANCZOS)
