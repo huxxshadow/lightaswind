@@ -3,6 +3,7 @@
 
   var T = {
     zh: {
+      teamH: "制作成员", teamSub: "每个人在游戏里，都演了一只海洋生物。", as_starfish: "饰 · 海星", as_slug: "饰 · 海蛞蝓", as_scallop: "饰 · 大扇贝", as_swordfish: "饰 · 剑鱼", as_octopus: "饰 · 章鱼", roles_jeff: "导演 · 设计 · 开发 · 技术美术", roles_sheldon: "设计 · 原画", roles_haocheng: "设计 · 工程师", roles_pb: "设计 · 场景美术", roles_uesugi: "设计 · 美术", thanksT: "特别鸣谢", thanksW: "好友 EHSV", thanksY: "感谢允许我们使用他的部分歌曲作为游戏配乐", 
       htmlLang: "zh-CN", docTitle: "愿此身如风 · Light as Wind", name: "中文",
       skip: "跳到正文", title: "愿此身如风", subtitle: "～去往天空深蓝的彼方",
       aboutH: "游戏简介",
@@ -22,6 +23,7 @@
       posterAlt: "海报：蓝天下白发少女的侧脸，白鸽飞过"
     },
     en: {
+      teamH: "The Team", teamSub: "Each of us plays a sea creature in the game.", as_starfish: "as the Starfish", as_slug: "as the Sea Slug", as_scallop: "as the Giant Scallop", as_swordfish: "as the Swordfish", as_octopus: "as the Octopus", roles_jeff: "Director · Designer · Developer · Technical Artist", roles_sheldon: "Designer · Concept Artist", roles_haocheng: "Designer · Engineer", roles_pb: "Designer · Environment Artist", roles_uesugi: "Designer · Art", thanksT: "Special Thanks", thanksW: "Our friend EHSV", thanksY: "For letting us use some of their songs in the game", 
       htmlLang: "en", docTitle: "Light as Wind · 愿此身如风", name: "English",
       skip: "Skip to content", title: "Light as Wind", subtitle: "~ To the Far Side of Deep Blue Sky",
       aboutH: "About the game",
@@ -41,6 +43,7 @@
       posterAlt: "Poster: a white-haired girl in profile against a blue sky, white doves flying past"
     },
     ja: {
+      teamH: "制作メンバー", teamSub: "メンバーはそれぞれ、ゲームの中で海の生き物を演じています。", as_starfish: "ヒトデ役", as_slug: "ウミウシ役", as_scallop: "大きなホタテ役", as_swordfish: "カジキ役", as_octopus: "タコ役", roles_jeff: "ディレクター · デザイナー · 開発 · テクニカルアーティスト", roles_sheldon: "デザイナー · コンセプトアーティスト", roles_haocheng: "デザイナー · エンジニア", roles_pb: "デザイナー · 背景アーティスト", roles_uesugi: "デザイナー · アート", thanksT: "スペシャルサンクス", thanksW: "友人の EHSV", thanksY: "一部の楽曲をゲーム音楽として使わせてくれたことに感謝します", 
       htmlLang: "ja", docTitle: "この身、風のごとく · Light as Wind", name: "日本語",
       skip: "本文へスキップ", title: "この身、風のごとく", subtitle: "〜深く青い空の彼方へ",
       aboutH: "ゲーム紹介",
@@ -60,6 +63,7 @@
       posterAlt: "ポスター：青空を背に白い髪の少女の横顔、白い鳩が飛んでいく"
     },
     ko: {
+      teamH: "제작진", teamSub: "우리는 각자 게임 속에서 바다 생물 하나를 연기합니다.", as_starfish: "불가사리 역", as_slug: "갯민숭달팽이 역", as_scallop: "큰 가리비 역", as_swordfish: "황새치 역", as_octopus: "문어 역", roles_jeff: "디렉터 · 디자이너 · 개발 · 테크니컬 아티스트", roles_sheldon: "디자이너 · 콘셉트 아티스트", roles_haocheng: "디자이너 · 엔지니어", roles_pb: "디자이너 · 환경 아티스트", roles_uesugi: "디자이너 · 아트", thanksT: "특별히 감사드립니다", thanksW: "친구 EHSV", thanksY: "일부 곡을 게임 음악으로 쓸 수 있게 해 준 것에 감사드립니다", 
       htmlLang: "ko", docTitle: "이 몸 바람처럼 · Light as Wind", name: "한국어",
       skip: "본문으로 건너뛰기", title: "이 몸 바람처럼", subtitle: "~ 깊고 푸른 하늘 저편으로",
       aboutH: "게임 소개",
