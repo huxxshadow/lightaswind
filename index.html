@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>愿此身如风 · Light as Wind</title>
+<title>愿此身如风</title>
 <meta name="description" content="《愿此身如风》Light as Wind — 一款像素风横版冒险游戏：穿过海洋，追寻远方的天空。A dreamy pixel-art side-scrolling adventure across the ocean, toward a faraway sky.">
 <link rel="canonical" href="https://lightaswind.com/">
 <meta name="theme-color" content="#4381ef">
@@ -42,7 +42,10 @@
         if (ok[c]) l = c;
       }
     }
-    document.documentElement.setAttribute("data-lang", ok[l] ? l : "en");
+    l = ok[l] ? l : "en";
+    document.documentElement.setAttribute("data-lang", l);
+    // the tab shows the game's name in the page's language, from the first paint
+    document.title = { zh: "愿此身如风", en: "Light as Wind", ja: "この身、風のごとく", ko: "이 몸 바람처럼" }[l];
   })();
 </script>
 <link rel="preload" href="/assets/fonts/xiaolai-subset.woff2" as="font" type="font/woff2" crossorigin>

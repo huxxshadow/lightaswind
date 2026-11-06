@@ -4,7 +4,7 @@
   var T = {
     zh: {
       teamH: "制作成员", as_starfish: "饰 · 海星", as_slug: "饰 · 海蛞蝓", as_scallop: "饰 · 大扇贝", as_swordfish: "饰 · 剑鱼", as_octopus: "饰 · 章鱼", roles_jeff: "导演 · 设计 · 开发 · 技术美术", roles_sheldon: "设计 · 原画", roles_haocheng: "设计 · 工程师", roles_pb: "设计 · 环境美术", roles_uesugi: "设计 · 环境美术", thanksT: "特别鸣谢", thanksW: "好友 EHSV", thanksY: "感谢允许我们使用他的部分歌曲作为游戏配乐", 
-      htmlLang: "zh-CN", docTitle: "愿此身如风 · Light as Wind", name: "中文",
+      htmlLang: "zh-CN", docTitle: "愿此身如风", name: "中文",
       skip: "跳到正文", title: "愿此身如风", subtitle: "～去往天空深蓝的彼方",
       aboutH: "游戏简介",
       lead: "在这款像素风横版冒险游戏中，你将踏上一段梦幻而有趣的旅程，\n穿过海洋，追寻远方的天空。",
@@ -24,7 +24,7 @@
     },
     en: {
       teamH: "The Team", as_starfish: "as the Starfish", as_slug: "as the Sea Slug", as_scallop: "as the Giant Scallop", as_swordfish: "as the Swordfish", as_octopus: "as the Octopus", roles_jeff: "Director · Designer · Developer · Technical Artist", roles_sheldon: "Designer · Concept Artist", roles_haocheng: "Designer · Engineer", roles_pb: "Designer · Environment Artist", roles_uesugi: "Designer · Environment Artist", thanksT: "Special Thanks", thanksW: "Our friend EHSV", thanksY: "For letting us use some of their songs in the game", 
-      htmlLang: "en", docTitle: "Light as Wind · 愿此身如风", name: "English",
+      htmlLang: "en", docTitle: "Light as Wind", name: "English",
       skip: "Skip to content", title: "Light as Wind", subtitle: "~ To the Far Side of Deep Blue Sky",
       aboutH: "About the game",
       lead: "In this pixel-art side-scrolling adventure, you set out on a dreamy, playful journey across the ocean, chasing a faraway sky.",
@@ -44,7 +44,7 @@
     },
     ja: {
       teamH: "制作メンバー", as_starfish: "ヒトデ役", as_slug: "ウミウシ役", as_scallop: "大きなホタテ役", as_swordfish: "カジキ役", as_octopus: "タコ役", roles_jeff: "ディレクター · デザイナー · 開発 · テクニカルアーティスト", roles_sheldon: "デザイナー · コンセプトアーティスト", roles_haocheng: "デザイナー · エンジニア", roles_pb: "デザイナー · 背景アーティスト", roles_uesugi: "デザイナー · 背景アーティスト", thanksT: "スペシャルサンクス", thanksW: "友人の EHSV", thanksY: "一部の楽曲をゲーム音楽として使わせてくれたことに感謝します", 
-      htmlLang: "ja", docTitle: "この身、風のごとく · Light as Wind", name: "日本語",
+      htmlLang: "ja", docTitle: "この身、風のごとく", name: "日本語",
       skip: "本文へスキップ", title: "この身、風のごとく", subtitle: "〜深く青い空の彼方へ",
       aboutH: "ゲーム紹介",
       lead: "このピクセルアートの横スクロールアドベンチャーで、あなたは海を越え、遠い空を追いかける、夢のように不思議で楽しい旅に出ます。",
@@ -64,7 +64,7 @@
     },
     ko: {
       teamH: "제작진", as_starfish: "불가사리 역", as_slug: "갯민숭달팽이 역", as_scallop: "큰 가리비 역", as_swordfish: "황새치 역", as_octopus: "문어 역", roles_jeff: "디렉터 · 디자이너 · 개발 · 테크니컬 아티스트", roles_sheldon: "디자이너 · 콘셉트 아티스트", roles_haocheng: "디자이너 · 엔지니어", roles_pb: "디자이너 · 환경 아티스트", roles_uesugi: "디자이너 · 환경 아티스트", thanksT: "특별히 감사드립니다", thanksW: "친구 EHSV", thanksY: "일부 곡을 게임 음악으로 쓸 수 있게 해 준 것에 감사드립니다", 
-      htmlLang: "ko", docTitle: "이 몸 바람처럼 · Light as Wind", name: "한국어",
+      htmlLang: "ko", docTitle: "이 몸 바람처럼", name: "한국어",
       skip: "본문으로 건너뛰기", title: "이 몸 바람처럼", subtitle: "~ 깊고 푸른 하늘 저편으로",
       aboutH: "게임 소개",
       lead: "이 픽셀 아트 횡스크롤 어드벤처에서, 당신은 바다를 건너 먼 하늘을 좇는 꿈같고 즐거운 여정을 떠납니다.",
