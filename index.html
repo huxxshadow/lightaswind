@@ -51,17 +51,30 @@
 <body>
 <a class="skip" href="#play" data-i18n="skip">跳到正文</a>
 
+<header class="site-head">
+  <a class="brand" href="#top">
+    <img src="/assets/icons/brand-96.png" width="40" height="40" alt="">
+    <span class="brand-name" data-i18n="title">愿此身如风</span>
+  </a>
+  <nav class="head-links" aria-label="Community">
+    <a class="link" href="https://discord.gg/FENe6exc" rel="noopener" target="_blank">Discord</a>
+    <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1c.6 5 1.8 7.6 8 9-6.2 1.4-7.4 4-8 9-.6-5-1.8-7.6-8-9 6.2-1.4 7.4-4 8-9z"/></svg>
+    <button type="button" class="link" data-copy="153707643" title="153707643"><span data-i18n="qq">QQ 群</span></button>
+    <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1c.6 5 1.8 7.6 8 9-6.2 1.4-7.4 4-8 9-.6-5-1.8-7.6-8-9 6.2-1.4 7.4-4 8-9z"/></svg>
+    <a class="link" href="mailto:3324557103@qq.com" data-i18n="mail">邮箱</a>
+  </nav>
+  <nav class="langs" aria-label="Language">
+    <button type="button" data-set-lang="zh" lang="zh-CN">中文</button>
+    <button type="button" data-set-lang="en" lang="en">EN</button>
+    <button type="button" data-set-lang="ja" lang="ja">日本語</button>
+    <button type="button" data-set-lang="ko" lang="ko">한국어</button>
+  </nav>
+</header>
+<p class="toast" role="status" aria-live="polite"></p>
+
 <main>
   <!-- Page 1: the poster -->
-  <section class="hero" aria-labelledby="game-title">
-    <header class="bar">
-      <nav class="langs" aria-label="Language">
-        <button type="button" data-set-lang="zh" lang="zh-CN">中文</button>
-        <button type="button" data-set-lang="en" lang="en">EN</button>
-        <button type="button" data-set-lang="ja" lang="ja">日本語</button>
-        <button type="button" data-set-lang="ko" lang="ko">한국어</button>
-      </nav>
-    </header>
+  <section id="top" class="hero" aria-labelledby="game-title">
     <div class="hero-art" role="img" data-i18n-aria="posterAlt" aria-label="海报：蓝天下白发少女的侧脸，白鸽飞过"></div>
     <div class="hero-titles" aria-hidden="true">
       <img class="t-zh" src="/assets/img/title-zh.webp" width="1011" height="260" alt="">
@@ -74,15 +87,15 @@
       <svg viewBox="0 0 40 24" aria-hidden="true"><path d="M5 6c5 4 10 9 15 13 4-5 9-9 15-14"/></svg>
     </a>
   </section>
-  <!-- the poster, blurred and mirrored, seeping down into the paper -->
+  <!-- the poster's edge colours seeping down into the paper -->
   <div class="bleed" aria-hidden="true"></div>
 
-  <!-- Page 2: story, itch.io, community -->
+  <!-- Page 2: story and itch.io -->
   <section id="play" class="play" aria-labelledby="play-h">
     <div class="inner">
       <div class="story">
         <!-- STORY MEDIA (placeholders): swap assets/media/story.mp4 (+ story-poster.webp)
-             and assets/img/story-a-*.webp, story-b-*.webp with real footage / screenshots -->
+             and assets/img/story-{a,b,c,d}-*.webp with real footage / screenshots -->
         <div class="story-art">
           <figure class="clip">
             <video id="story-video" class="pixel" muted loop playsinline preload="metadata"
@@ -94,8 +107,12 @@
               <svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-pause" d="M8 5.5v13M16 5.5v13"/><path class="i-play" d="M8 5.5l11 6.5-11 6.5z"/></svg>
             </button>
           </figure>
-          <a class="shot" href="/assets/img/story-a-1792.webp"><img class="pixel" src="/assets/img/story-a-896.webp" srcset="/assets/img/story-a-896.webp 896w, /assets/img/story-a-1792.webp 1792w" sizes="(min-width: 900px) 25vw, 46vw" width="896" height="504" loading="lazy" decoding="async" data-i18n-alt="altA" alt="幽暗的海底剧场里，一束光照着弹竖琴的玩偶海星，水母在四周漂浮"></a>
-          <a class="shot" href="/assets/img/story-b-1792.webp"><img class="pixel" src="/assets/img/story-b-896.webp" srcset="/assets/img/story-b-896.webp 896w, /assets/img/story-b-1792.webp 1792w" sizes="(min-width: 900px) 25vw, 46vw" width="896" height="504" loading="lazy" decoding="async" data-i18n-alt="altB" alt="浅海的巨大珊瑚旁，一只红色螃蟹在沙地上爬行"></a>
+          <div class="shots">
+            <a class="shot" href="/assets/img/story-a-1792.webp"><img class="pixel" src="/assets/img/story-a-896.webp" srcset="/assets/img/story-a-896.webp 896w, /assets/img/story-a-1792.webp 1792w" sizes="(min-width: 900px) 26vw, 46vw" width="896" height="504" loading="lazy" decoding="async" data-i18n-alt="altA" alt="幽暗的海底剧场里，一束光照着弹竖琴的玩偶海星，水母在四周漂浮"></a>
+            <a class="shot" href="/assets/img/story-b-1792.webp"><img class="pixel" src="/assets/img/story-b-896.webp" srcset="/assets/img/story-b-896.webp 896w, /assets/img/story-b-1792.webp 1792w" sizes="(min-width: 900px) 26vw, 46vw" width="896" height="504" loading="lazy" decoding="async" data-i18n-alt="altB" alt="浅海的巨大珊瑚旁，一只红色螃蟹在沙地上爬行"></a>
+            <a class="shot" href="/assets/img/story-c-1792.webp"><img class="pixel" src="/assets/img/story-c-896.webp" srcset="/assets/img/story-c-896.webp 896w, /assets/img/story-c-1792.webp 1792w" sizes="(min-width: 900px) 26vw, 46vw" width="896" height="504" loading="lazy" decoding="async" data-i18n-alt="altC" alt="漆黑的深海里，一只发光的水母漂过珊瑚丛"></a>
+            <a class="shot" href="/assets/img/story-d-1792.webp"><img class="pixel" src="/assets/img/story-d-896.webp" srcset="/assets/img/story-d-896.webp 896w, /assets/img/story-d-1792.webp 1792w" sizes="(min-width: 900px) 26vw, 46vw" width="896" height="504" loading="lazy" decoding="async" data-i18n-alt="altD" alt="海底沉船的残骸旁，珊瑚和海草静静生长"></a>
+          </div>
         </div>
         <div class="story-text">
           <h2 id="play-h" class="sr" data-i18n="aboutH">游戏简介</h2>
@@ -113,8 +130,6 @@
           </div>
         </div>
       </div>
-      <span class="mark" aria-hidden="true"></span>
-
       <div class="itch">
         <!-- ITCH EMBED: replace this placeholder with the itch.io widget, e.g.
              <iframe src="https://itch.io/embed/GAME_ID?dark=false" width="552" height="167" title="Light as Wind on itch.io" loading="lazy"></iframe>
@@ -125,14 +140,6 @@
         </div>
       </div>
 
-      <ul class="links">
-        <li><a class="link" href="https://discord.gg/FENe6exc" rel="noopener" target="_blank">Discord</a></li>
-        <li aria-hidden="true"><svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1c.6 5 1.8 7.6 8 9-6.2 1.4-7.4 4-8 9-.6-5-1.8-7.6-8-9 6.2-1.4 7.4-4 8-9z"/></svg></li>
-        <li><button type="button" class="link" data-copy="153707643"><span data-i18n="qq">QQ 群</span> 153707643</button></li>
-        <li aria-hidden="true"><svg class="star" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1c.6 5 1.8 7.6 8 9-6.2 1.4-7.4 4-8 9-.6-5-1.8-7.6-8-9 6.2-1.4 7.4-4 8-9z"/></svg></li>
-        <li><a class="link" href="mailto:3324557103@qq.com" data-i18n="mail">邮箱</a></li>
-      </ul>
-      <p class="toast" aria-live="polite"></p>
     </div>
     <footer class="foot">© 2026 Light as Wind</footer>
   </section>

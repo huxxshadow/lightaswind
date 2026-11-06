@@ -89,6 +89,7 @@ def tile(size, radius_frac=0.22, pad_frac=0.08):
 
 
 tile(32).save(ICO / "favicon-32.png")
+tile(96).save(ICO / "brand-96.png")  # header logo
 tile(256).save(ROOT / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48), (64, 64)])
 for s in (192, 512):
     tile(s, radius_frac=0).save(ICO / f"icon-{s}.png")
@@ -108,6 +109,8 @@ tmp = ROOT / "tools" / "_frame.png"
 STILLS = [
     ("story-a", "promo/harp-show/harp_show_v8_get_on.mp4", 32.0),
     ("story-b", "clips/corals/giant_corals_shallow.mp4", 22.0),
+    ("story-c", "clips/anglerfish/level03_arrive_light.mp4", 21.1),
+    ("story-d", "clips/level09/shipwreck_walk_through.mp4", 7.5),
 ]
 for name, rel, t in STILLS:
     ff("-ss", str(t), "-i", str(REC / rel), "-frames:v", "1", str(tmp))
