@@ -20,7 +20,51 @@
       altD: "海底沉船的残骸旁，珊瑚和海草静静生长",
       altB: "浅海的巨大珊瑚旁，一只红色螃蟹在沙地上爬行",
       storyAlt: "水母群从海底向上漂去，玩偶海星站在海草之间",
-      posterAlt: "海报：蓝天下白发少女的侧脸，白鸽飞过"
+      posterAlt: "海报：蓝天下白发少女的侧脸，白鸽飞过",
+      switchPoster: "换一张海报",
+      feat1: "可爱的海洋生物，栩栩如生的程序化动画。",
+      feat2: "丰富的物理交互，世界会回应你的每一次跳跃。",
+      feat3: "梦幻唯美的海洋世界，等你去探索。",
+      feat4: "多样的生物群系，从幽暗深海到辽阔的海与天。",
+      feat5: "三位可操控的玩偶主角，各有各的行动方式。",
+      partsH: "两段旅程",
+      partsNote: "目前版本包含上篇，下篇仍在开发中。",
+      p1k: "上篇",
+      p1n: "深蓝",
+      p1d: "向下，潜入一场蓝色的梦。",
+      p1s: "现已推出",
+      p2k: "下篇",
+      p2n: "天空",
+      p2d: "跃出海面，去往梦醒前的天空。",
+      p2s: "开发中",
+      joinH: "加入我们",
+      joinSub: "遇到 bug，或者只是想聊聊？来社区找我们吧，每一条反馈都让旅途更好。",
+      qrQ: "QQ 群 153707643",
+      playItch: "在 itch.io 上玩",
+      teamIntro: "我们是来自 USC Games 的五名学生。《愿此身如风》是我们为 That Game Jam 组队做出的作品，里面装着许多个熬过的深夜，和我们满满的心意。",
+      intern: "正在寻找 2027 年暑期实习",
+      teamClose: "谢谢你玩到最后。\n希望这个故事里，有一些让你喜欢的瞬间。",
+      dlH: "下载与安装",
+      dlBtn: "在 itch.io 下载",
+      dl1: "下载 Lightaswind.zip，解压到任意位置（不要在压缩包里直接运行）。",
+      dl2: "打开文件夹，双击 Lightaswind.exe。",
+      dl3: "如果 Windows 提示「Windows 已保护你的电脑」，点「更多信息」→「仍要运行」（游戏暂未签名）。",
+      inKey: "键盘和鼠标",
+      inPad: "手柄",
+      inMidi: "MIDI 键盘",
+      tip: "推荐使用手柄，并戴上耳机。",
+      reqH: "配置要求",
+      reqNote: "早期版本，以下为估计值。",
+      reqMin: "最低",
+      reqRec: "推荐",
+      reqOS: "系统",
+      reqCPU: "处理器",
+      reqMem: "内存",
+      reqGPU: "显卡",
+      reqDisk: "存储空间",
+      trailerH: "宣传片",
+      trailerPlay: "播放宣传片（YouTube）",
+      trailerNote: "点击播放后会从 YouTube 加载视频。"
     },
     en: {
       teamH: "The Team", as_starfish: "as the Starfish", as_slug: "as the Sea Slug", as_scallop: "as the Giant Scallop", as_swordfish: "as the Swordfish", as_octopus: "as the Octopus", roles_jeff: "Director · Designer · Developer · Technical Artist", roles_sheldon: "Designer · Concept Artist", roles_haocheng: "Designer · Engineer", roles_pb: "Designer · Environment Artist", roles_uesugi: "Designer · Environment Artist", thanksT: "Special Thanks", thanksW: "Our friend EHSV", thanksY: "For letting us use some of their songs in the game", 
@@ -40,7 +84,51 @@
       altD: "The wreck of a ship on the seabed, with coral and seagrass growing around it",
       altB: "A red crab crawling across the sand beside giant shallow-water corals",
       storyAlt: "Jellyfish drifting up from the seabed past a plush starfish standing in the seagrass",
-      posterAlt: "Poster: a white-haired girl in profile against a blue sky, white doves flying past"
+      posterAlt: "Poster: a white-haired girl in profile against a blue sky, white doves flying past",
+      switchPoster: "Show the other poster",
+      feat1: "Cute sea creatures with lifelike, fully procedural animation.",
+      feat2: "Rich, physics-driven interactions with everything around you.",
+      feat3: "A dreamy, beautiful ocean world waiting to be explored.",
+      feat4: "Diverse biomes, from the dark deep to the open sea and sky.",
+      feat5: "Switch between three plush heroes, each with its own abilities.",
+      partsH: "Two parts, one journey",
+      partsNote: "The current version covers Part I; Part II is still in development.",
+      p1k: "Part I",
+      p1n: "Beneath the Blue",
+      p1d: "Down, into a dream of blue.",
+      p1s: "Available now",
+      p2k: "Part II",
+      p2n: "Skyward",
+      p2d: "Leap from the waves, toward the sky before waking.",
+      p2s: "In development",
+      joinH: "Join us",
+      joinSub: "Found a bug, or just want to say hi? Come find us. Every report makes the journey better.",
+      qrQ: "QQ group 153707643",
+      playItch: "Play on itch.io",
+      teamIntro: "We're five students from USC Games, and Light as Wind is our entry for That Game Jam. We teamed up for this jam and poured plenty of late nights and a lot of love into it.",
+      intern: "Open to Summer 2027 internships",
+      teamClose: "Thank you for playing to the end.\nI hope this story gave you a few moments you loved.",
+      dlH: "Download & Install",
+      dlBtn: "Download on itch.io",
+      dl1: "Download Lightaswind.zip and unzip it anywhere (don't run it from inside the zip).",
+      dl2: "Open the folder and double-click Lightaswind.exe.",
+      dl3: "If Windows says \"Windows protected your PC\", click More info → Run anyway (the game isn't code-signed yet).",
+      inKey: "Keyboard & mouse",
+      inPad: "Controller",
+      inMidi: "MIDI keyboard",
+      tip: "Best with a controller and headphones.",
+      reqH: "System requirements",
+      reqNote: "Early build: these are estimates.",
+      reqMin: "Minimum",
+      reqRec: "Recommended",
+      reqOS: "OS",
+      reqCPU: "CPU",
+      reqMem: "Memory",
+      reqGPU: "Graphics",
+      reqDisk: "Storage",
+      trailerH: "Trailer",
+      trailerPlay: "Play the trailer (YouTube)",
+      trailerNote: "The video loads from YouTube when you press play."
     },
     ja: {
       teamH: "制作メンバー", as_starfish: "ヒトデ役", as_slug: "ウミウシ役", as_scallop: "大きなホタテ役", as_swordfish: "カジキ役", as_octopus: "タコ役", roles_jeff: "ディレクター · デザイナー · 開発 · テクニカルアーティスト", roles_sheldon: "デザイナー · コンセプトアーティスト", roles_haocheng: "デザイナー · エンジニア", roles_pb: "デザイナー · 背景アーティスト", roles_uesugi: "デザイナー · 背景アーティスト", thanksT: "スペシャルサンクス", thanksW: "友人の EHSV", thanksY: "一部の楽曲をゲーム音楽として使わせてくれたことに感謝します", 
@@ -60,7 +148,51 @@
       altD: "海底に沈んだ船の残骸のまわりに、サンゴと海草が育っている",
       altB: "浅瀬の巨大なサンゴのそばを、赤いカニが砂の上を歩いていく",
       storyAlt: "海草の間に立つぬいぐるみのヒトデの上を、クラゲの群れが昇っていく",
-      posterAlt: "ポスター：青空を背に白い髪の少女の横顔、白い鳩が飛んでいく"
+      posterAlt: "ポスター：青空を背に白い髪の少女の横顔、白い鳩が飛んでいく",
+      switchPoster: "もう一枚のポスターを見る",
+      feat1: "リアルなプロシージャルアニメーションで動く、かわいい海の生き物たち。",
+      feat2: "周りのあらゆるものと関わる、豊かな物理インタラクション。",
+      feat3: "探索を待つ、夢のように美しい海の世界。",
+      feat4: "暗い深海から広い海と空まで、多彩なバイオーム。",
+      feat5: "それぞれ違う動きをする、3体のぬいぐるみの主人公。",
+      partsH: "二つの旅",
+      partsNote: "現在のバージョンは前編まで。後編は開発中です。",
+      p1k: "前編",
+      p1n: "深い青",
+      p1d: "下へ、青い夢の中へ。",
+      p1s: "配信中",
+      p2k: "後編",
+      p2n: "空へ",
+      p2d: "波を飛び越えて、目覚める前の空へ。",
+      p2s: "開発中",
+      joinH: "参加しよう",
+      joinSub: "バグを見つけたら、または話したいときは、コミュニティへどうぞ。",
+      qrQ: "QQ グループ 153707643",
+      playItch: "itch.io で遊ぶ",
+      teamIntro: "私たちは USC Games の学生5人です。『この身、風のごとく』は、That Game Jam のためにチームを組んで作った作品。たくさんの夜更かしと、ありったけの想いが詰まっています。",
+      intern: "2027年夏のインターンシップを募集中",
+      teamClose: "最後まで遊んでくれて、ありがとう。\nこの物語のどこかに、好きになれる瞬間がありますように。",
+      dlH: "ダウンロードとインストール",
+      dlBtn: "itch.io でダウンロード",
+      dl1: "Lightaswind.zip をダウンロードし、好きな場所に展開してください（zip の中から直接起動しないでください）。",
+      dl2: "フォルダを開き、Lightaswind.exe をダブルクリックします。",
+      dl3: "「Windows によって PC が保護されました」と表示されたら、「詳細情報」→「実行」を押してください（まだコード署名がありません）。",
+      inKey: "キーボードとマウス",
+      inPad: "コントローラー",
+      inMidi: "MIDI キーボード",
+      tip: "コントローラーとヘッドホンでのプレイがおすすめです。",
+      reqH: "動作環境",
+      reqNote: "初期ビルドのため、目安です。",
+      reqMin: "最低",
+      reqRec: "推奨",
+      reqOS: "OS",
+      reqCPU: "CPU",
+      reqMem: "メモリ",
+      reqGPU: "グラフィック",
+      reqDisk: "ストレージ",
+      trailerH: "トレーラー",
+      trailerPlay: "トレーラーを再生（YouTube）",
+      trailerNote: "再生を押すと YouTube から動画を読み込みます。"
     },
     ko: {
       teamH: "제작진", as_starfish: "불가사리 역", as_slug: "갯민숭달팽이 역", as_scallop: "큰 가리비 역", as_swordfish: "황새치 역", as_octopus: "문어 역", roles_jeff: "디렉터 · 디자이너 · 개발 · 테크니컬 아티스트", roles_sheldon: "디자이너 · 콘셉트 아티스트", roles_haocheng: "디자이너 · 엔지니어", roles_pb: "디자이너 · 환경 아티스트", roles_uesugi: "디자이너 · 환경 아티스트", thanksT: "특별히 감사드립니다", thanksW: "친구 EHSV", thanksY: "일부 곡을 게임 음악으로 쓸 수 있게 해 준 것에 감사드립니다", 
@@ -80,7 +212,51 @@
       altD: "해저에 가라앉은 난파선 주위로 산호와 해초가 자란다",
       altB: "얕은 바다의 거대한 산호 옆 모래 위를 빨간 게가 기어간다",
       storyAlt: "해초 사이에 선 인형 불가사리 위로 해파리 떼가 떠오른다",
-      posterAlt: "포스터: 푸른 하늘을 배경으로 한 흰 머리 소녀의 옆얼굴, 흰 비둘기가 날아간다"
+      posterAlt: "포스터: 푸른 하늘을 배경으로 한 흰 머리 소녀의 옆얼굴, 흰 비둘기가 날아간다",
+      switchPoster: "다른 포스터 보기",
+      feat1: "생생한 절차적 애니메이션으로 움직이는 귀여운 바다 생물들.",
+      feat2: "주변의 모든 것과 상호작용하는 풍부한 물리 효과.",
+      feat3: "탐험을 기다리는 꿈처럼 아름다운 바다 세계.",
+      feat4: "어두운 심해부터 탁 트인 바다와 하늘까지, 다양한 생물 군계.",
+      feat5: "저마다 다르게 움직이는 세 명의 인형 주인공.",
+      partsH: "두 개의 여정",
+      partsNote: "현재 버전은 상편까지이며, 하편은 개발 중입니다.",
+      p1k: "상편",
+      p1n: "깊은 푸름",
+      p1d: "아래로, 푸른 꿈속으로.",
+      p1s: "지금 플레이 가능",
+      p2k: "하편",
+      p2n: "하늘로",
+      p2d: "파도를 박차고, 깨어나기 전의 하늘로.",
+      p2s: "개발 중",
+      joinH: "함께해요",
+      joinSub: "버그를 발견했거나 이야기하고 싶다면 커뮤니티로 오세요.",
+      qrQ: "QQ 그룹 153707643",
+      playItch: "itch.io에서 플레이",
+      teamIntro: "저희는 USC Games의 학생 다섯 명입니다. 『이 몸 바람처럼』은 That Game Jam을 위해 팀을 꾸려 만든 작품으로, 수많은 밤샘과 저희의 진심이 담겨 있습니다.",
+      intern: "2027년 여름 인턴십 구직 중",
+      teamClose: "끝까지 플레이해 주셔서 고마워요.\n이 이야기 속에서 마음에 드는 순간이 있었기를 바라요.",
+      dlH: "다운로드 및 설치",
+      dlBtn: "itch.io에서 다운로드",
+      dl1: "Lightaswind.zip을 다운로드해 원하는 곳에 압축을 푸세요(압축 파일 안에서 바로 실행하지 마세요).",
+      dl2: "폴더를 열고 Lightaswind.exe를 더블클릭하세요.",
+      dl3: "\"Windows의 PC 보호\" 창이 뜨면 \"추가 정보\" → \"실행\"을 누르세요(아직 코드 서명이 없습니다).",
+      inKey: "키보드와 마우스",
+      inPad: "컨트롤러",
+      inMidi: "MIDI 키보드",
+      tip: "컨트롤러와 헤드폰으로 플레이하는 것을 추천합니다.",
+      reqH: "시스템 요구 사항",
+      reqNote: "초기 빌드이므로 예상치입니다.",
+      reqMin: "최소",
+      reqRec: "권장",
+      reqOS: "운영체제",
+      reqCPU: "CPU",
+      reqMem: "메모리",
+      reqGPU: "그래픽",
+      reqDisk: "저장 공간",
+      trailerH: "트레일러",
+      trailerPlay: "트레일러 재생 (YouTube)",
+      trailerNote: "재생을 누르면 YouTube에서 영상을 불러옵니다."
     }
   };
 
@@ -154,6 +330,39 @@
   // itch.io button without a page yet: stays put
   each('.itch-btn[href="#itch"]', function (a) { a.addEventListener("click", function (e) { e.preventDefault(); }); });
 
+  // The hero shows the first poster; a click on it (or the two dots) crossfades to the second, and back.
+  (function () {
+    var hero = document.getElementById("top"), sw = document.querySelector(".poster-switch");
+    if (!hero || !sw) return;
+    function flip() {
+      var two = !hero.classList.contains("p2");
+      hero.classList.toggle("p2", two); document.documentElement.classList.toggle("poster2", two);
+      sw.setAttribute("aria-pressed", String(two));
+    }
+    sw.addEventListener("click", function (e) { e.stopPropagation(); flip(); });
+    hero.querySelector(".stage").addEventListener("click", flip);
+  })();
+
+  // Trailer: a still with a play button; YouTube is only contacted once it is pressed.
+  each(".trailer-play", function (b) {
+    b.addEventListener("click", function () {
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + b.getAttribute("data-yt") + "?autoplay=1&rel=0&modestbranding=1";
+      f.title = T[current].trailerH; f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen"; f.allowFullscreen = true;
+      b.parentNode.replaceChild(f, b);
+    });
+  });
+
+  // The four small feature clips: each plays only while on screen (and never with reduced motion).
+  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var shotIO = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { var p = e.target.play(); if (p && p.catch) p.catch(function () {}); } else e.target.pause();
+      });
+    }, { threshold: 0.35 });
+    each(".shots video, .team .bow", function (v) { shotIO.observe(v); });
+  }
+
   // Story clip: plays only while on screen, never with reduced motion.
   var video = document.getElementById("story-video");
   var toggle = document.querySelector(".playpause");
@@ -217,7 +426,7 @@
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     var groups = [
       [".lead"], [".story-art"], [".story-text .motto"], [".itch-btn"],
-      [".poem p", 260], [".team h2"], [".cards .card", 140], [".thanks"]
+      [".poem p", 260], [".parts-head"], [".band .txt"], [".team h2"], [".members .member", 120], [".team .bow"], [".thanks"], [".download .inputs li", 120], [".join .qr", 140]
     ];
     // Reveal whatever has come above 88% of the screen height - including things a fast scroll or a jump link
     // went straight past, so nothing can be left hidden.
