@@ -22,6 +22,9 @@
       storyAlt: "水母群从海底向上漂去，玩偶海星站在海草之间",
       posterAlt: "海报：蓝天下白发少女的侧脸，白鸽飞过",
       switchPoster: "换一张海报",
+      posterTabs: "两张海报",
+      posterTab1: "Part I · 深海",
+      posterTab2: "Part II · 天空",
       feat1: "可爱的海洋生物，栩栩如生的程序化动画。",
       feat2: "丰富的物理交互，世界会回应你的每一次跳跃。",
       feat3: "梦幻唯美的海洋世界，等你去探索。",
@@ -88,6 +91,9 @@
       storyAlt: "Jellyfish drifting up from the seabed past a plush starfish standing in the seagrass",
       posterAlt: "Poster: a white-haired girl in profile against a blue sky, white doves flying past",
       switchPoster: "Show the other poster",
+      posterTabs: "Two posters",
+      posterTab1: "Part I · The Deep",
+      posterTab2: "Part II · The Sky",
       feat1: "Cute sea creatures with lifelike, fully procedural animation.",
       feat2: "Rich, physics-driven interactions with everything around you.",
       feat3: "A dreamy, beautiful ocean world waiting to be explored.",
@@ -154,6 +160,9 @@
       storyAlt: "海草の間に立つぬいぐるみのヒトデの上を、クラゲの群れが昇っていく",
       posterAlt: "ポスター：青空を背に白い髪の少女の横顔、白い鳩が飛んでいく",
       switchPoster: "もう一枚のポスターを見る",
+      posterTabs: "二枚のポスター",
+      posterTab1: "Part I · 深海",
+      posterTab2: "Part II · 空",
       feat1: "リアルなプロシージャルアニメーションで動く、かわいい海の生き物たち。",
       feat2: "周りのあらゆるものと関わる、豊かな物理インタラクション。",
       feat3: "探索を待つ、夢のように美しい海の世界。",
@@ -220,6 +229,9 @@
       storyAlt: "해초 사이에 선 인형 불가사리 위로 해파리 떼가 떠오른다",
       posterAlt: "포스터: 푸른 하늘을 배경으로 한 흰 머리 소녀의 옆얼굴, 흰 비둘기가 날아간다",
       switchPoster: "다른 포스터 보기",
+      posterTabs: "포스터 두 장",
+      posterTab1: "Part I · 심해",
+      posterTab2: "Part II · 하늘",
       feat1: "생생한 절차적 애니메이션으로 움직이는 귀여운 바다 생물들.",
       feat2: "주변의 모든 것과 상호작용하는 풍부한 물리 효과.",
       feat3: "탐험을 기다리는 꿈처럼 아름다운 바다 세계.",
@@ -338,17 +350,36 @@
   // itch.io button without a page yet: stays put
   each('.itch-btn[href="#itch"]', function (a) { a.addEventListener("click", function (e) { e.preventDefault(); }); });
 
-  // The hero shows the first poster; a click on it (or the two dots) crossfades to the second, and back.
+  // The hero's two posters take turns every 7 s while it is on screen (paused under the mouse, off screen or in a
+  // background tab). The labels, the small print in the corner or a click on the poster switch by hand, and from
+  // then on it stays where the visitor put it. No turns with reduced motion.
   (function () {
-    var hero = document.getElementById("top"), sw = document.querySelector(".poster-switch");
-    if (!hero || !sw) return;
-    function flip() {
-      var two = !hero.classList.contains("p2");
+    var hero = document.getElementById("top"), tabs = document.querySelectorAll(".ptab"), peek = document.querySelector(".poster-peek");
+    if (!hero || tabs.length !== 2) return;
+    var TURN = 7000, timer = 0, held = window.matchMedia("(prefers-reduced-motion: reduce)").matches, over = false, seen = true;
+    function show(two) {
       hero.classList.toggle("p2", two); document.documentElement.classList.toggle("poster2", two);
-      sw.setAttribute("aria-pressed", String(two));
+      tabs[0].setAttribute("aria-pressed", String(!two)); tabs[1].setAttribute("aria-pressed", String(two));
     }
-    sw.addEventListener("click", function (e) { e.stopPropagation(); flip(); });
-    hero.querySelector(".stage").addEventListener("click", flip);
+    function run() {
+      clearTimeout(timer);
+      var go = !held && !over && seen && !document.hidden;
+      // restart the bar: drop the class, force a reflow, put it back
+      hero.classList.remove("rotating");
+      if (!go) return;
+      void hero.offsetWidth; hero.classList.add("rotating");
+      timer = setTimeout(function () { show(!hero.classList.contains("p2")); run(); }, TURN);
+    }
+    function byHand(two) { held = true; show(two); run(); }
+    tabs[0].addEventListener("click", function (e) { e.stopPropagation(); byHand(false); });
+    tabs[1].addEventListener("click", function (e) { e.stopPropagation(); byHand(true); });
+    if (peek) peek.addEventListener("click", function (e) { e.stopPropagation(); byHand(!hero.classList.contains("p2")); });
+    hero.querySelector(".stage").addEventListener("click", function () { byHand(!hero.classList.contains("p2")); });
+    hero.addEventListener("mouseenter", function () { over = true; run(); });
+    hero.addEventListener("mouseleave", function () { over = false; run(); });
+    document.addEventListener("visibilitychange", run);
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { seen = es[0].intersectionRatio > 0.5; run(); }, { threshold: [0, 0.5, 1] }).observe(hero);
+    run();
   })();
 
   // Trailer: a still with a play button; YouTube is only contacted once it is pressed.

@@ -1,7 +1,7 @@
 /* Xiaolai (小赖字体) by LXGW, SIL OFL 1.1 — subset to the glyphs this site uses. */
 @font-face {
   font-family: "Xiaolai";
-  src: url(fonts/xiaolai-subset.woff2?v=8) format("woff2");
+  src: url(fonts/xiaolai-subset.woff2?v=9) format("woff2");
   font-weight: 400;
   font-display: swap;
 }
@@ -376,17 +376,36 @@ html[data-lang="zh"] .words2 .t-zh, html:not([data-lang="zh"]) .words2 .t-en { d
 .hero.p2 .words2 img { animation: rise 1.1s .15s cubic-bezier(.2,.7,.2,1) both; }
 html.poster2 .bleed::before { background-image: url(img/bleed2.webp); }
 .hero.p2 .down { color: var(--ink); filter: none; }
-/* the switch: two hand-drawn dots, bottom right */
-.poster-switch {
-  position: absolute; z-index: 2; right: clamp(16px, 3vw, 40px); bottom: max(26px, env(safe-area-inset-bottom));
-  display: flex; gap: 10px; padding: 10px 12px; border: 0; background: rgba(255, 255, 255, .18); cursor: pointer;
-  border-radius: 999px; backdrop-filter: blur(4px);
-}
-.pdot { width: 11px; height: 11px; border-radius: 50%; border: 1.6px solid #fff; transition: background-color .3s ease, border-color .3s ease; }
-.poster-switch[aria-pressed="false"] .pdot:first-child, .poster-switch[aria-pressed="true"] .pdot:last-child { background: #fff; }
-.hero.p2 .poster-switch { background: rgba(46, 79, 88, .12); }
-.hero.p2 .pdot { border-color: #2e4f58; }
-.hero.p2 .poster-switch[aria-pressed="true"] .pdot:last-child { background: #2e4f58; }
+/* the switch: the two parts by name, bottom centre; a thin bar fills while the poster waits its turn */
+.poster-tabs { position: absolute; z-index: 3; left: 50%; bottom: max(24px, env(safe-area-inset-bottom)); transform: translateX(-50%);
+               display: flex; gap: 4px; padding: 5px; border-radius: 999px; background: rgba(255, 255, 255, .22); backdrop-filter: blur(6px); }
+.ptab { position: relative; overflow: hidden; border: 0; cursor: pointer; font: inherit; font-size: 15px; line-height: 1.2; color: #fff; background: none;
+        padding: 7px 16px 9px; border-radius: 999px; white-space: nowrap; transition: background-color .4s, color .4s; }
+.ptab[aria-pressed="true"] { background: #fff; color: #2f62c9; }
+.ptab .bar { position: absolute; left: 14px; right: 14px; bottom: 4px; height: 2px; border-radius: 2px; background: currentColor; opacity: .5;
+             transform-origin: left; transform: scaleX(0); }
+.hero.rotating .ptab[aria-pressed="true"] .bar { animation: ptfill var(--turn, 7s) linear forwards; }
+@keyframes ptfill { to { transform: scaleX(1); } }
+.hero.p2 .poster-tabs { background: rgba(46, 79, 88, .14); }
+.hero.p2 .ptab { color: #2e4f58; }
+.hero.p2 .ptab[aria-pressed="true"] { background: #2e4f58; color: #fff; }
+.hero .down { bottom: calc(max(24px, env(safe-area-inset-bottom)) + 52px); }
+/* a small print of the other poster, taped in the corner */
+.poster-peek { position: absolute; z-index: 3; right: clamp(16px, 3vw, 44px); bottom: clamp(22px, 4vw, 48px); width: clamp(150px, 16vw, 240px);
+               padding: 7px 7px 0; background: #fff; border: 0; cursor: pointer; rotate: 3deg; font: inherit; color: #2e4f58;
+               box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .45); transition: rotate .4s cubic-bezier(.3, 1.6, .5, 1), translate .4s; animation: peekbob 4s ease-in-out infinite; }
+.poster-peek:hover { rotate: -1deg; translate: 0 -4px; animation-play-state: paused; }
+.poster-peek img { display: none; width: 100%; height: auto; aspect-ratio: 16 / 9; }
+.poster-peek > span { display: block; padding: 6px 2px 8px; font-size: 15px; text-align: left; }
+.poster-peek > span i { font-style: normal; display: none; }
+.poster-peek > span b { font-weight: 400; float: right; }
+.poster-peek::before { content: ""; position: absolute; left: 50%; top: -9px; width: 64px; height: 18px; margin-left: -32px; rotate: -4deg; background: rgba(240, 225, 170, .8); }
+html[data-lang="zh"] .hero:not(.p2) .poster-peek img.pk2.t-zh, html:not([data-lang="zh"]) .hero:not(.p2) .poster-peek img.pk2.t-en,
+html[data-lang="zh"] .hero.p2 .poster-peek img.pk1.t-zh, html:not([data-lang="zh"]) .hero.p2 .poster-peek img.pk1.t-en { display: block; }
+.hero:not(.p2) .poster-peek i.pk2, .hero.p2 .poster-peek i.pk1 { display: inline; }
+@keyframes peekbob { 50% { translate: 0 -5px; } }
+@media (max-width: 760px) { .poster-peek { width: 128px; padding: 5px 5px 0; bottom: calc(max(24px, env(safe-area-inset-bottom)) + 60px); }
+                            .poster-peek > span { font-size: 13px; padding: 4px 1px 6px; } .ptab { font-size: 14px; padding: 7px 13px 9px; } }
 @media (max-aspect-ratio: 1/1) {
   .sky2 { bottom: auto; height: 64%; background-size: cover; background-position: 60% top;
           background-image: image-set(url(img/hero2-bg-p-520.webp) 1x, url(img/hero2-bg-p-780.webp) 2x);
@@ -396,8 +415,10 @@ html.poster2 .bleed::before { background-image: url(img/bleed2.webp); }
   .words2 { top: 56%; bottom: auto; padding: 0 24px; }
   .words2 img, .words2 .t-zh, .words2 .t-en { position: relative; left: auto; top: auto; margin: 0 auto; width: min(100%, 520px); }
   html.poster2 .bleed::before { background: linear-gradient(#f4f2ec, var(--paper)); }
+  .poster-tabs { background: rgba(255, 255, 255, .5); }
+  .ptab { color: #2f62c9; }
 }
-@media (prefers-reduced-motion: reduce) { .p2only, .sky, .girl, .words { transition: none; } .hero.p2 .words2 img { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .p2only, .sky, .girl, .words { transition: none; } .hero.p2 .words2 img, .poster-peek { animation: none; } }
 
 /* ---- Page 2: the five feature clips with their lines ---- */
 .story-art figcaption { margin-top: 6px; font-size: 15px; line-height: 1.45; color: var(--ink-soft); }
