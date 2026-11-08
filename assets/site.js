@@ -45,8 +45,9 @@
       intern: "正在寻找 2027 年暑期实习",
       teamClose: "谢谢你玩到最后。\n希望这个故事里，有一些让你喜欢的瞬间。",
       dlH: "下载与安装",
-      dlBtn: "下载 Windows 版",
-      dlItch: "也可以在 itch.io 下载 ↗",
+      dlBtn: "在 itch.io 下载",
+      dlDirect: "直接下载（备用）",
+      dlAltLead: "itch.io 打不开或下载失败？",
       dl1: "下载 LightAsWind-Part1-v1.0-Windows.zip，解压到任意位置（不要在压缩包里直接运行）。",
       dl2: "打开文件夹，双击 Lightaswind.exe。",
       dl3: "如果 Windows 提示「Windows 已保护你的电脑」，点「更多信息」→「仍要运行」（游戏暂未签名）。",
@@ -64,8 +65,8 @@
       reqGPU: "显卡",
       reqDisk: "存储空间",
       trailerH: "宣传片",
-      trailerPlay: "播放宣传片（YouTube）",
-      trailerNote: "点击播放后会从 YouTube 加载视频。"
+      trailerPlay: "播放宣传片（哔哩哔哩）",
+      trailerNote: "点击播放后会从哔哩哔哩加载视频。"
     },
     en: {
       teamH: "The Team", as_starfish: "as the Starfish", as_slug: "as the Sea Slug", as_scallop: "as the Giant Scallop", as_swordfish: "as the Swordfish", as_octopus: "as the Octopus", roles_jeff: "Director · Designer · Developer · Technical Artist", roles_sheldon: "Designer · Concept Artist", roles_haocheng: "Designer · Engineer", roles_pb: "Designer · Environment Artist", roles_uesugi: "Designer · Environment Artist", thanksT: "Special Thanks", thanksW: "Our friend EHSV", thanksY: "For letting us use some of their songs in the game", 
@@ -110,8 +111,9 @@
       intern: "Open to Summer 2027 internships",
       teamClose: "Thank you for playing to the end.\nI hope this story gave you a few moments you loved.",
       dlH: "Download & Install",
-      dlBtn: "Download for Windows",
-      dlItch: "Also available on itch.io ↗",
+      dlBtn: "Download on itch.io",
+      dlDirect: "Direct download (backup)",
+      dlAltLead: "Can't reach itch.io, or the download fails?",
       dl1: "Download LightAsWind-Part1-v1.0-Windows.zip and unzip it anywhere (don't run it from inside the zip).",
       dl2: "Open the folder and double-click Lightaswind.exe.",
       dl3: "If Windows says \"Windows protected your PC\", click More info → Run anyway (the game isn't code-signed yet).",
@@ -175,8 +177,9 @@
       intern: "2027年夏のインターンシップを募集中",
       teamClose: "最後まで遊んでくれて、ありがとう。\nこの物語のどこかに、好きになれる瞬間がありますように。",
       dlH: "ダウンロードとインストール",
-      dlBtn: "Windows 版をダウンロード",
-      dlItch: "itch.io でも入手できます ↗",
+      dlBtn: "itch.io でダウンロード",
+      dlDirect: "直接ダウンロード（予備）",
+      dlAltLead: "itch.io が開けない、またはダウンロードできない場合は",
       dl1: "LightAsWind-Part1-v1.0-Windows.zip をダウンロードし、好きな場所に展開してください（zip の中から直接起動しないでください）。",
       dl2: "フォルダを開き、Lightaswind.exe をダブルクリックします。",
       dl3: "「Windows によって PC が保護されました」と表示されたら、「詳細情報」→「実行」を押してください（まだコード署名がありません）。",
@@ -240,8 +243,9 @@
       intern: "2027년 여름 인턴십 구직 중",
       teamClose: "끝까지 플레이해 주셔서 고마워요.\n이 이야기 속에서 마음에 드는 순간이 있었기를 바라요.",
       dlH: "다운로드 및 설치",
-      dlBtn: "Windows 버전 다운로드",
-      dlItch: "itch.io에서도 받을 수 있어요 ↗",
+      dlBtn: "itch.io에서 다운로드",
+      dlDirect: "직접 다운로드 (예비)",
+      dlAltLead: "itch.io가 열리지 않거나 다운로드가 안 되나요?",
       dl1: "LightAsWind-Part1-v1.0-Windows.zip을 다운로드해 원하는 곳에 압축을 푸세요(압축 파일 안에서 바로 실행하지 마세요).",
       dl2: "폴더를 열고 Lightaswind.exe를 더블클릭하세요.",
       dl3: "\"Windows의 PC 보호\" 창이 뜨면 \"추가 정보\" → \"실행\"을 누르세요(아직 코드 서명이 없습니다).",
@@ -351,7 +355,10 @@
   each(".trailer-play", function (b) {
     b.addEventListener("click", function () {
       var f = document.createElement("iframe");
-      f.src = "https://www.youtube-nocookie.com/embed/" + b.getAttribute("data-yt") + "?autoplay=1&rel=0&modestbranding=1";
+      // Chinese visitors get Bilibili (YouTube does not open in mainland China); everyone else YouTube
+      f.src = current === "zh" && b.getAttribute("data-bv")
+        ? "https://player.bilibili.com/player.html?bvid=" + b.getAttribute("data-bv") + "&autoplay=1&high_quality=1&danmaku=0"
+        : "https://www.youtube-nocookie.com/embed/" + b.getAttribute("data-yt") + "?autoplay=1&rel=0&modestbranding=1";
       f.title = T[current].trailerH; f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen"; f.allowFullscreen = true;
       b.parentNode.replaceChild(f, b);
     });

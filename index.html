@@ -50,8 +50,8 @@
     document.title = { zh: "愿此身如风", en: "Light as Wind", ja: "この身、風のごとく", ko: "이 몸 바람처럼" }[l];
   })();
 </script>
-<link rel="preload" href="/assets/fonts/xiaolai-subset.woff2?v=6" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=11">
+<link rel="preload" href="/assets/fonts/xiaolai-subset.woff2?v=8" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=13">
 </head>
 <body>
 <a class="skip" href="#play" data-i18n="skip">跳到正文</a>
@@ -151,11 +151,17 @@
         <div class="story-text">
           <h2 id="play-h" class="sr" data-i18n="aboutH">游戏简介</h2>
           <p class="motto" data-i18n="motto">愿此身如风，去往天空深蓝的彼方。</p>
-          <a class="itch-btn" href="https://huxxshadow.itch.io/light-as-wind" target="_blank" rel="noopener">
-            <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.6c.2-1.7.8-3.1 1.7-4.4 4.2-.5 8.4-.5 12.6 0 .9 1.3 1.5 2.7 1.7 4.4M4 9.6c.5 1.4 2.6 1.4 3.2 0 .6 1.4 2.6 1.4 3.2 0 .6 1.4 2.6 1.4 3.2 0 .6 1.4 2.6 1.4 3.2 0 .6 1.4 2.6 1.4 3.2 0M5.3 11c-.2 2.6-.1 5.2.3 7.8 4.3.5 8.6.5 12.9 0 .4-2.6.5-5.2.3-7.8M9.4 17.2c1.7.7 3.5.7 5.2 0"/><circle class="dot" cx="9.6" cy="14.2" r="1.1"/><circle class="dot" cx="14.4" cy="14.2" r="1.1"/></svg>
-            <span data-i18n="itchGo">前往 itch.io</span>
-            <svg class="arrow" viewBox="0 0 26 14" aria-hidden="true"><path d="M2 7.6c6.6-.6 13.2-.7 20-.3M17.4 2.6c1.8 1.6 3.5 3.1 5.4 4.6-1.9 1.4-3.7 3-5.5 4.6"/></svg>
-          </a>
+          <div class="cta-row">
+            <a class="itch-btn" href="https://huxxshadow.itch.io/light-as-wind" target="_blank" rel="noopener">
+              <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9.6c.2-1.7.8-3.1 1.7-4.4 4.2-.5 8.4-.5 12.6 0 .9 1.3 1.5 2.7 1.7 4.4M4 9.6c.5 1.4 2.6 1.4 3.2 0 .6 1.4 2.6 1.4 3.2 0 .6 1.4 2.6 1.4 3.2 0 .6 1.4 2.6 1.4 3.2 0 .6 1.4 2.6 1.4 3.2 0M5.3 11c-.2 2.6-.1 5.2.3 7.8 4.3.5 8.6.5 12.9 0 .4-2.6.5-5.2.3-7.8M9.4 17.2c1.7.7 3.5.7 5.2 0"/><circle class="dot" cx="9.6" cy="14.2" r="1.1"/><circle class="dot" cx="14.4" cy="14.2" r="1.1"/></svg>
+              <span data-i18n="itchGo">前往 itch.io</span>
+              <svg class="arrow" viewBox="0 0 26 14" aria-hidden="true"><path d="M2 7.6c6.6-.6 13.2-.7 20-.3M17.4 2.6c1.8 1.6 3.5 3.1 5.4 4.6-1.9 1.4-3.7 3-5.5 4.6"/></svg>
+            </a>
+            <a class="mirror-btn" href="https://dl.lightaswind.com/LightAsWind-Part1-v1.0-Windows.zip" download>
+              <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.2c-.1 4.6 0 8.9.1 12.6M7.4 12.6c1.6 1.5 3.1 2.9 4.7 4.3 1.5-1.5 3-2.9 4.5-4.4M5 19.6c4.6.3 9.3.3 14 0"/></svg>
+              <span data-i18n="dlDirect">直接下载（备用）</span>
+            </a>
+          </div>
           <svg class="wave" viewBox="0 0 120 14" aria-hidden="true"><path d="M2 8c9-6 15-6 22 0s14 6 22 0 15-6 22 0 14 6 22 0 15-6 26-1"/></svg>
           <div class="poem">
             <p data-i18n="poem1">听说，海的尽头，
@@ -175,7 +181,7 @@
   <section id="trailer" class="trailer" aria-labelledby="trailer-h">
     <h2 id="trailer-h" class="sec-h star-h" data-i18n="trailerH">宣传片</h2>
     <div class="frame16">
-      <button type="button" class="trailer-play" data-yt="E369TPUjwCU" data-i18n-aria="trailerPlay" aria-label="播放宣传片（YouTube）">
+      <button type="button" class="trailer-play" data-yt="E369TPUjwCU" data-bv="BV1cS4W63Et1" data-i18n-aria="trailerPlay" aria-label="播放宣传片（YouTube）">
         <img class="pe" src="/assets/img/p1-en-1600.webp" width="1600" height="900" alt="" loading="lazy" decoding="async">
         <img class="pz" src="/assets/img/p1-zh-1600.webp" width="1600" height="900" alt="" loading="lazy" decoding="async">
         <span class="tp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 6.2v11.6c3.4-1.9 6.8-3.8 10-5.8-3.2-2-6.6-3.9-10-5.8z"/></svg></span>
@@ -212,8 +218,8 @@
   <!-- Page 5: download, install, requirements -->
   <section id="download" class="download" aria-labelledby="dl-h">
     <h2 id="dl-h" class="sec-h star-h" data-i18n="dlH">下载与安装</h2>
-    <a class="dl-btn" href="https://dl.lightaswind.com/LightAsWind-Part1-v1.0-Windows.zip" download><span data-i18n="dlBtn">下载 Windows 版</span> <small>Part I · v1.0 · 129 MB</small></a>
-    <p class="dl-alt"><a href="https://huxxshadow.itch.io/light-as-wind" target="_blank" rel="noopener" data-i18n="dlItch">也可以在 itch.io 下载 ↗</a></p>
+    <a class="dl-btn" href="https://huxxshadow.itch.io/light-as-wind" target="_blank" rel="noopener"><span data-i18n="dlBtn">在 itch.io 下载</span> <small>Windows · Part I · 129 MB</small></a>
+    <p class="dl-alt"><span data-i18n="dlAltLead">itch.io 打不开或下载失败？</span> <a href="https://dl.lightaswind.com/LightAsWind-Part1-v1.0-Windows.zip" download data-i18n="dlDirect">直接下载（备用）</a></p>
     <ol class="steps"><li data-i18n="dl1"></li><li data-i18n="dl2"></li><li data-i18n="dl3"></li></ol>
     <ul class="inputs">
       <li><img class="pixel" src="/assets/img/in-keys.png" alt=""><span data-i18n="inKey"></span></li>
@@ -249,6 +255,6 @@
   <footer class="foot">© 2026 Light as Wind</footer>
 </main>
 
-<script src="/assets/site.js?v=8" defer></script>
+<script src="/assets/site.js?v=10" defer></script>
 </body>
 </html>
