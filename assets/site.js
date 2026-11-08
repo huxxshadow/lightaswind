@@ -351,10 +351,10 @@
   each('.itch-btn[href="#itch"]', function (a) { a.addEventListener("click", function (e) { e.preventDefault(); }); });
 
   // The hero's two posters take turns every 7 s while it is on screen (paused under the mouse, off screen or in a
-  // background tab). The labels, the small print in the corner or a click on the poster switch by hand, and from
+  // background tab). The labels or a click on the poster switch by hand, and from
   // then on it stays where the visitor put it. No turns with reduced motion.
   (function () {
-    var hero = document.getElementById("top"), tabs = document.querySelectorAll(".ptab"), peek = document.querySelector(".poster-peek");
+    var hero = document.getElementById("top"), tabs = document.querySelectorAll(".ptab");
     if (!hero || tabs.length !== 2) return;
     var TURN = 7000, timer = 0, held = window.matchMedia("(prefers-reduced-motion: reduce)").matches, over = false, seen = true;
     function show(two) {
@@ -373,7 +373,6 @@
     function byHand(two) { held = true; show(two); run(); }
     tabs[0].addEventListener("click", function (e) { e.stopPropagation(); byHand(false); });
     tabs[1].addEventListener("click", function (e) { e.stopPropagation(); byHand(true); });
-    if (peek) peek.addEventListener("click", function (e) { e.stopPropagation(); byHand(!hero.classList.contains("p2")); });
     hero.querySelector(".stage").addEventListener("click", function () { byHand(!hero.classList.contains("p2")); });
     hero.addEventListener("mouseenter", function () { over = true; run(); });
     hero.addEventListener("mouseleave", function () { over = false; run(); });

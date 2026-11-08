@@ -390,22 +390,7 @@ html.poster2 .bleed::before { background-image: url(img/bleed2.webp); }
 .hero.p2 .ptab { color: #2e4f58; }
 .hero.p2 .ptab[aria-pressed="true"] { background: #2e4f58; color: #fff; }
 .hero .down { bottom: calc(max(24px, env(safe-area-inset-bottom)) + 52px); }
-/* a small print of the other poster, taped in the corner */
-.poster-peek { position: absolute; z-index: 3; right: clamp(16px, 3vw, 44px); bottom: clamp(22px, 4vw, 48px); width: clamp(150px, 16vw, 240px);
-               padding: 7px 7px 0; background: #fff; border: 0; cursor: pointer; rotate: 3deg; font: inherit; color: #2e4f58;
-               box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .45); transition: rotate .4s cubic-bezier(.3, 1.6, .5, 1), translate .4s; animation: peekbob 4s ease-in-out infinite; }
-.poster-peek:hover { rotate: -1deg; translate: 0 -4px; animation-play-state: paused; }
-.poster-peek img { display: none; width: 100%; height: auto; aspect-ratio: 16 / 9; }
-.poster-peek > span { display: block; padding: 6px 2px 8px; font-size: 15px; text-align: left; }
-.poster-peek > span i { font-style: normal; display: none; }
-.poster-peek > span b { font-weight: 400; float: right; }
-.poster-peek::before { content: ""; position: absolute; left: 50%; top: -9px; width: 64px; height: 18px; margin-left: -32px; rotate: -4deg; background: rgba(240, 225, 170, .8); }
-html[data-lang="zh"] .hero:not(.p2) .poster-peek img.pk2.t-zh, html:not([data-lang="zh"]) .hero:not(.p2) .poster-peek img.pk2.t-en,
-html[data-lang="zh"] .hero.p2 .poster-peek img.pk1.t-zh, html:not([data-lang="zh"]) .hero.p2 .poster-peek img.pk1.t-en { display: block; }
-.hero:not(.p2) .poster-peek i.pk2, .hero.p2 .poster-peek i.pk1 { display: inline; }
-@keyframes peekbob { 50% { translate: 0 -5px; } }
-@media (max-width: 760px) { .poster-peek { width: 128px; padding: 5px 5px 0; bottom: calc(max(24px, env(safe-area-inset-bottom)) + 60px); }
-                            .poster-peek > span { font-size: 13px; padding: 4px 1px 6px; } .ptab { font-size: 14px; padding: 7px 13px 9px; } }
+@media (max-width: 760px) { .ptab { font-size: 14px; padding: 7px 13px 9px; } }
 @media (max-aspect-ratio: 1/1) {
   .sky2 { bottom: auto; height: 64%; background-size: cover; background-position: 60% top;
           background-image: image-set(url(img/hero2-bg-p-520.webp) 1x, url(img/hero2-bg-p-780.webp) 2x);
@@ -418,7 +403,7 @@ html[data-lang="zh"] .hero.p2 .poster-peek img.pk1.t-zh, html:not([data-lang="zh
   .poster-tabs { background: rgba(255, 255, 255, .5); }
   .ptab { color: #2f62c9; }
 }
-@media (prefers-reduced-motion: reduce) { .p2only, .sky, .girl, .words { transition: none; } .hero.p2 .words2 img, .poster-peek { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .p2only, .sky, .girl, .words { transition: none; } .hero.p2 .words2 img { animation: none; } }
 
 /* ---- Page 2: the five feature clips with their lines ---- */
 .story-art figcaption { margin-top: 6px; font-size: 15px; line-height: 1.45; color: var(--ink-soft); }
