@@ -1,7 +1,7 @@
 /* Xiaolai (小赖字体) by LXGW, SIL OFL 1.1 — subset to the glyphs this site uses. */
 @font-face {
   font-family: "Xiaolai";
-  src: url(fonts/xiaolai-subset.woff2?v=5) format("woff2");
+  src: url(fonts/xiaolai-subset.woff2?v=6) format("woff2");
   font-weight: 400;
   font-display: swap;
 }
@@ -532,3 +532,4 @@ html[data-lang="zh"] .trailer-play .pe { display: none; }
 .trailer-play:hover .tp-icon { transform: scale(1.08); }
 .tnote { margin: 12px 0 0; font-size: 14px; color: var(--ink-soft); }
 .team .close span { white-space: pre-line; }
+.dl-alt { margin: 12px 0 0; font-size: 15px; } .dl-alt a { border-bottom: 1.5px dashed var(--line); padding-bottom: 1px; color: var(--ink-soft); }
